@@ -1,0 +1,60 @@
+.left-head {
+  font-size: 65px;
+  margin-top: 40px;
+  padding: 5px;
+  color: rgba(128, 128, 128, 0.413);
+}
+
+.mid-card {
+  background-color: rgba(105, 105, 105, 0.155);
+  margin-bottom: 20px;
+}
+
+.custom-control-inline {
+  width: 50px;
+}
+
+.ckbox{
+  margin-top: 20px;
+  margin-right: 125px;
+}
+
+.ckboxrow {
+  margin-left: 125px;
+}
+
+.date-card {
+  margin-bottom: 20px;
+
+}
+
+.h-title {
+  color: white;
+  background-color: rgb(101, 100, 100);
+}
+.prescriber-side{
+  
+}
+.gutter-mid {
+  
+  
+  border-left: 1px black solid;
+  
+}
+
+.pharmacy-side {
+  margin-right: 80px;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+.finish {
+
+  border-top: 1px solid black;
+}
+
+.last-sec {
+  border-bottom: 1px solid black;
+}
