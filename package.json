@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "project2.1",
+=======
+  "name": "Project2.1",
+>>>>>>> 640d870ff33c8e2d33a9bfa75caac534f5b74aa8
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,11 +15,16 @@
     "type": "git",
     "url": "git+https://github.com/DebMeade/Project2.1.git"
   },
+<<<<<<< HEAD
+=======
+  "keywords": [],
+>>>>>>> 640d870ff33c8e2d33a9bfa75caac534f5b74aa8
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DebMeade/Project2.1/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/DebMeade/Project2.1#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -25,4 +34,7 @@
   },
   "devDependencies": {},
   "keywords": []
+=======
+  "homepage": "https://github.com/DebMeade/Project2.1#readme"
+>>>>>>> 640d870ff33c8e2d33a9bfa75caac534f5b74aa8
 }
