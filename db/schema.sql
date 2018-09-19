@@ -45,7 +45,6 @@ CREATE TABLE contacts
     locationId VARCHAR (40) NULL,    
     email VARCHAR (40) NULL, 
     phone VARCHAR (40) NOT NULL,
-
     PRIMARY KEY
     (id)
 );
