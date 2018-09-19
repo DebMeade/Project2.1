@@ -6,22 +6,22 @@ $(document).ready(function(){
   $("#infoIn").on("click", function(){
 
 
-    arrDrugTime = [];
+   var early = false;
+   var mid = false;
+   var late = false;
+   var non = false;
 
     if($("#early").is(':checked'))
-    arrDrugTime.push("early")
+    var early = true;
 
     if($("#mid").is(':checked'))
-    arrDrugTime.push("mid")
+    var mid = true;
 
     if($("#late").is(':checked'))
-    arrDrugTime.push("late")
+    var late = true;
 
     if($("#non").is(':checked'))
-    arrDrugTime.push("late")
-    
-    
-    console.log("arrD: " + arrDrugTime);
+    var late = true;
     
 
     var drug_db_input = {
@@ -41,7 +41,9 @@ $(document).ready(function(){
       rxReorder: $("#rxReorder").val(),
       drugDose: $("#drugDose").val(),
       drugFreq: $("#drugFreq").val(),
-      drugTime: arrDrugTime,
+      early: early,
+      mid: mid,
+      late: late,
       instructions: $("#instructions").val(),
       precautions: $("#precautions").val(),
       rxFilled: $("#rxFilled").val()
