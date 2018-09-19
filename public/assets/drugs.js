@@ -1,11 +1,14 @@
+
+
 $(document).ready(function(){
 
   //adding date to dateTitle div
-  $(document).ready(function() {
-    $ (".lead").append(new Date());
-    });
-// input objects coming from input.html
+    // var time = new Date().format("YYYY-MM-DD");
+    var time = moment().format("dddd, MMMM Do YYYY");
 
+    // console.log(time)
+    $ (".lead").append(time);
+  
 
   $("#infoIn").on("click", function(){
 

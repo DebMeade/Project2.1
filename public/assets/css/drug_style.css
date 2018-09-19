@@ -63,4 +63,7 @@
   width: 100px;
   float: right;
   margin-top: 5px;
+  position: relative;
+  bottom: 105px;
+  right: 20px;
 }
