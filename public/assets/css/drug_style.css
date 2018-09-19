@@ -56,3 +56,11 @@
 .last-sec {
   border-bottom: 1px solid black;
 }
+
+.rx {
+  /* margin-left: 65%; */
+  height: 100px;
+  width: 100px;
+  float: right;
+  margin-top: 5px;
+}
