@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+  //adding date to dateTitle div
+  $(document).ready(function() {
+    $ (".lead").append(new Date());
+    });
 // input objects coming from input.html
 
 
@@ -111,4 +115,3 @@ $(document).ready(function(){
   // })
 
 });
-
