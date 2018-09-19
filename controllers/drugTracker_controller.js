@@ -1,3 +1,6 @@
+
+
+
 var express = require("express");
 var router = express.Router();
 
@@ -52,10 +55,28 @@ router.post("/drugInfo", function(req, res){
 ], function(result){
   res.json({id: result.insertId});
 });
-});
+//});
 
 // res.render instead???
 
+
+  var hbsObjectOne;
+  db.drugs.all(function(data){
+    hbsObjectOne = {
+      drugs: data
+    };
+    console.log(hbsObjectOne);
+  });
+    db.contacts.all(function(data){
+      var hbsObjectTwo = {
+        contacts: data
+      };
+      console.log(hbsObjectTwo);
+
+    });
+    res.render("index", hbsObjectOne);
+ 
+});
 
 // module.exports = function(app) {
  
@@ -72,5 +93,8 @@ router.post("/drugInfo", function(req, res){
 //   res.render("index");
   
 // })
+  
+// })
 
 module.exports = router;
+
