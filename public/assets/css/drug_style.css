@@ -67,3 +67,19 @@
   bottom: 105px;
   right: 20px;
 }
+
+.columnWidth {
+  width: 18% !important;
+}
+
+.taken {
+  width: 5% !important; 
+}
+
+.columnDosage {
+  width: 9% !important;
+}
+
+.centerText {
+  text-align: center;
+}
