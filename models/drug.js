@@ -8,12 +8,6 @@ var drugs = {
         });
     },
 
-    //     all: function(cb){
-    //     orm.all("contacts", function(res){
-    //         cb(res);
-    //     });
-    // }
-
 }
 
 var contacts = {

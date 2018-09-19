@@ -12,7 +12,10 @@ var connection = require("../config/connection.js");
           }
           cb(result);
         });
-      }
+      },
+
+  
+  
 
 
     // create: function(table, cols, vals, cb) {

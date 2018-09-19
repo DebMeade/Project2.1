@@ -7,7 +7,8 @@ CREATE TABLE drugs
 (
     ndcNum INT (40) NOT NULL, 
     rxNum   INT (40) NOT NULL,
-    name VARCHAR(40) NOT NULL, 
+    doctorName VARCHAR(40) NOT NULL,
+    pharmName VARCHAR(40) NOT NULL, 
     drugName VARCHAR (40) NOT NULL,
     drugForm VARCHAR (40) NOT NULL, 
     drugFormSize INT (40) NULL, 
@@ -22,7 +23,7 @@ CREATE TABLE drugs
     drugDose INT NOT NULL, 
     drugFreq INT NOT NULL, 
     early   BOOLEAN, 
-    mid     BOOLEAN, 
+    middle  BOOLEAN, 
     late    BOOLEAN,
     instructions TEXT NOT NULL,
     precautions TEXT NOT NULL,
@@ -37,7 +38,8 @@ CREATE TABLE contacts
 (
     id INT (40) AUTO_INCREMENT,  
     type VARCHAR (40) NOT NULL,         
-    name VARCHAR (40) NOT NULL,
+    pharmName VARCHAR (40) NULL,
+    doctorName VARCHAR (40) NULL,
     address VARCHAR (40) NOT NULL,
     city VARCHAR (40) NOT NULL, 
     state VARCHAR (40) NOT NULL, 

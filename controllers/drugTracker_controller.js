@@ -22,9 +22,60 @@ router.get("/", function(req, res){
       console.log(hbsObjectTwo);
 
     });
+    db.drugs.all(function(data){
+      var hbsObjectThree = {
+        drugs: data
+      };
+      console.log(hbsObjectThree.drugs[0].drugName);
+      console.log(hbsObjectThree.drugs[0].currentQty);
+    });
     res.render("index", hbsObjectOne);
- 
+ });
+
+ router.post("/api/drugInfo", function(req, res){
+  db.create([
+    "ndcNum", "rxNum", "drugName", "drugForm", "drugFormSize", "drugFormMeasure", "bottleFullQty", "bottlePartialQty",
+    "rxRefills",
+    "rxWritten",
+    "rxDiscard",
+    "rxReorder",
+    "drugDose",
+    "early",
+    "mid",
+    "late",
+    "instructions",
+    "precautions",
+    "rxFilled"
+  ],
+[
+  req.body.ndcNum,
+  req.body.rxNum,
+  req.body.drugName,
+  req.body.drugForm,
+  req.body.drugFormSize,
+  req.body.drugFormMeasure,
+  req.body.bottleFullQty,
+  req.body.bottlePartialQty,
+  req.body.rxRefills,
+  req.body.rxWritten,
+  req.body.rxDiscard,
+  req.body.rxReorder,
+  req.body.drugDose,
+  req.body.early,
+  req.body.mid,
+  req.body.late,
+  req.body.instructions,
+  req.body.precautions,
+  req.body.rxFilled
+], function(result){
+  res.json({id: result.insertId});
 });
+
+})
+
+
+
+
 
 // module.exports = function(app) {
  
