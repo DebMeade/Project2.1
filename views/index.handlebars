@@ -2,11 +2,26 @@
   <div class="container">
     <div id="morning" class="col-md-12">
       <h2>Morning Medications</h2>
+      {{#each drugs}}
+      <ol class="col-md-8"></ol>
+      {{drugName}} {{drugDose}} {{instructions}} {{precautions}} {{currentQty}}
+      </ol>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<div id="morningTable">
+  <div class="container">
+    <div id="morning" class="col-md-12">
+      <h2>Morning Medications</h2>
+      <thead>
+        
+      </thead>
+      <tbody>
         {{#each drugs}}
-        <ol class="col-md-8"></ol>
-          {{drugName}}
-        </ol>
-        {{/each}}
+          <tr></tr>
+      </tbody>
     </div>
   </div>
 </div>
