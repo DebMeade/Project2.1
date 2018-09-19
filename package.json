@@ -1,13 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "project2.1",
-=======
-<<<<<<< HEAD
-  "name": "project2.1",
-=======
   "name": "Project2.1",
->>>>>>> 640d870ff33c8e2d33a9bfa75caac534f5b74aa8
->>>>>>> 386167c939c7d2a2f90658ee7705a7e3c94420e7
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -19,36 +11,19 @@
     "type": "git",
     "url": "git+https://github.com/DebMeade/Project2.1.git"
   },
-<<<<<<< HEAD
-=======
   "keywords": [],
->>>>>>> 640d870ff33c8e2d33a9bfa75caac534f5b74aa8
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DebMeade/Project2.1/issues"
   },
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 386167c939c7d2a2f90658ee7705a7e3c94420e7
   "homepage": "https://github.com/DebMeade/Project2.1#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-<<<<<<< HEAD
+    "handlebars.moment": "^1.0.4",
     "moment": "^2.22.2",
     "mysql": "^2.16.0"
-  },
-  "devDependencies": {}
-=======
-    "mysql": "^2.16.0"
-  },
-  "devDependencies": {},
-  "keywords": []
-=======
-  "homepage": "https://github.com/DebMeade/Project2.1#readme"
->>>>>>> 640d870ff33c8e2d33a9bfa75caac534f5b74aa8
->>>>>>> 386167c939c7d2a2f90658ee7705a7e3c94420e7
+  }
 }
