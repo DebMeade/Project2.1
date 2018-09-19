@@ -8,7 +8,7 @@ var db = require("../models/drug.js");
 
 
 router.get("/", function(req, res){
-  db.all(function(data){
+  db.drugs.all(function(data){
     var hbsObject = {
       drugs: data
     };
@@ -17,7 +17,7 @@ router.get("/", function(req, res){
   });
 });
 
-router.post("/drugInfo", function(req, res){
+router.post("/drugList", function(req, res){
   db.create([
     "ndcNum", "rxNum", "drugName", "drugForm", "drugFormSize", "drugFormMeasure", "bottleFullQty", "bottlePartialQty",
     "rxRefills",
