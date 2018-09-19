@@ -3,38 +3,36 @@ var connection = require("../config/connection.js");
 
 
 
-    var orm = {
-      all: function(tableInput, cb) {
-        var queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, function(err, result) {
-          if (err) {
-            throw err;
-          }
-          cb(result);
-        });
-      }
-
-
-    // create: function(table, cols, vals, cb) {
-    //   var queryString = "INSERT INTO " + table;
+  var orm = {
+    all: function(tableInput, cb) {
+      var queryString = "SELECT * FROM " + tableInput + ";";
+      connection.query(queryString, function(err, result) {
+        if (err) {
+          throw err;
+        }
+        cb(result);
+      });
+    },
+    create: function(table, cols, vals, cb) {
+      var queryString = "INSERT INTO " + table;
   
-    //   queryString += " (";
-    //   queryString += cols.toString();
-    //   queryString += ") ";
-    //   queryString += "VALUES (";
-    //   queryString += printQuestionMarks(vals.length);
-    //   queryString += ") ";
+      queryString += " (";
+      queryString += cols.toString();
+      queryString += ") ";
+      queryString += "VALUES (";
+      queryString += printQuestionMarks(vals.length);
+      queryString += ") ";
   
-    //   console.log(queryString);
+      console.log(queryString);
   
-    //   connection.query(queryString, vals, function(err, result) {
-    //     if (err) {
-    //       throw err;
-    //     }
+      connection.query(queryString, vals, function(err, result) {
+        if (err) {
+          throw err;
+        }
   
-    //     cb(result);
-    //   });
-    // },
+        cb(result);
+      });
+    }
     // // An example of objColVals would be {name: panther, sleepy: true}
     // update: function(table, objColVals, condition, cb) {
     //   var queryString = "UPDATE " + table;
@@ -70,3 +68,4 @@ var connection = require("../config/connection.js");
   
   // Export the orm object for the model (cat.js).
   module.exports = orm;
+  
