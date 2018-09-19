@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 
    var early = false;
-   var mid = false;
+   var middle = false;
    var late = false;
    var non = false;
 
@@ -15,7 +15,7 @@ $(document).ready(function(){
     var early = true;
 
     if($("#mid").is(':checked'))
-    var mid = true;
+    var middle = true;
 
     if($("#late").is(':checked'))
     var late = true;
@@ -42,7 +42,7 @@ $(document).ready(function(){
       drugDose: $("#drugDose").val(),
       drugFreq: $("#drugFreq").val(),
       early: early,
-      mid: mid,
+      middle: middle,
       late: late,
       instructions: $("#instructions").val(),
       precautions: $("#precautions").val(),
