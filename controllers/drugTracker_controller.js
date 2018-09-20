@@ -6,6 +6,8 @@ var router = express.Router();
 
 var db = require("../models/drug.js");
 
+var path = require("path");
+
 
 router.get("/", function(req, res){
   db.drugs.all(function(data){
@@ -29,40 +31,44 @@ router.get("/addnew", function(req, res) {
 });
 
 router.post("/drugList", function(req, res){
-  db.create([
-    "ndcNum", "rxNum", "drugName", "drugForm", "drugFormSize", "drugFormMeasure", "bottleFullQty", "bottlePartialQty",
-    "rxRefills",
+  console.log('posting...');
+  db.drugs.create([
+    "ndcNum", "rxNum",  "pharmName", "doctorName","drugName", "drugForm", "drugFormSize", "drugFormMeasure", "bottleFullQty", "bottlePartialQty",
     "rxWritten",
+    "rxFilled",
     "rxDiscard",
     "rxReorder",
     "drugDose",
+    "drugFreq",
     "early",
-    "mid",
+    "middle",
     "late",
     "instructions",
-    "precautions",
-    "rxFilled"
+    "precautions"
   ],
 [
   req.body.ndcNum,
   req.body.rxNum,
+  req.body.pharmName,
+  req.body.doctorName,
   req.body.drugName,
   req.body.drugForm,
   req.body.drugFormSize,
   req.body.drugFormMeasure,
+  // req.body.currentQty,
   req.body.bottleFullQty,
   req.body.bottlePartialQty,
-  req.body.rxRefills,
   req.body.rxWritten,
+  req.body.rxFilled,
   req.body.rxDiscard,
   req.body.rxReorder,
   req.body.drugDose,
+  req.body.drugFreq,
   req.body.early,
-  req.body.mid,
+  req.body.middle,
   req.body.late,
   req.body.instructions,
-  req.body.precautions,
-  req.body.rxFilled
+  req.body.precautions
 ], function(result){
   res.json({id: result.insertId});
 });
@@ -71,23 +77,27 @@ router.post("/drugList", function(req, res){
 // res.render instead???
 
 
-  var hbsObjectOne;
-  db.drugs.all(function(data){
-    hbsObjectOne = {
-      drugs: data
-    };
-    console.log(hbsObjectOne);
-  });
-    db.contacts.all(function(data){
-      var hbsObjectTwo = {
-        contacts: data
-      };
-      console.log(hbsObjectTwo);
+  // var hbsObjectOne;
+  // db.drugs.all(function(data){
+  //   hbsObjectOne = {
+  //     drugs: data
+  //   };
+  //   console.log(hbsObjectOne);
+  // });
+  //   db.contacts.all(function(data){
+  //     var hbsObjectTwo = {
+  //       contacts: data
+  //     };
+  //     console.log(hbsObjectTwo);
 
-    });
-    res.render("index", hbsObjectOne);
+  //   });
+  //   res.render("index", hbsObjectOne);
  
 });
+
+router.get("/input", function(req, res){
+res.sendFile(path.resolve("public/input.html"));
+})
 
 // module.exports = function(app) {
  
