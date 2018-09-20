@@ -18,8 +18,8 @@
         <tbody>
 
           <td>{{#each drugs}} {{#if early}}</td>
-
-          <tr class="col-md-12 centerText">
+{{> drug }}
+          {{!-- <tr class="col-md-12 centerText">
             <div class="row">
               <td class="col-md-2 taken" >
                 <input type="checkbox" {{bindAttr checked="isChecked" }}>
@@ -31,7 +31,7 @@
               <td class="col-md-2 columnWidth">{{this.currentQty}}</td>
             </div>
             </td>
-          </tr>
+          </tr> --}}
           {{/if}} {{/each}}
         </tbody>
       </table>
@@ -62,8 +62,8 @@
         <tbody>
 
           <td>{{#each drugs}} {{#if middle}}</td>
-
-          <tr class="col-md-12 centerText">
+{{> drug }}
+          {{!-- <tr class="col-md-12 centerText">
             <div class="row">
               <td class="col-md-2 taken" >
                 <input type="checkbox" {{bindAttr checked="isChecked" }}>
@@ -75,7 +75,7 @@
               <td class="col-md-2 columnWidth">{{this.currentQty}}</td>
             </div>
             </td>
-          </tr>
+          </tr> --}}
           {{/if}} {{/each}}
         </tbody>
       </table>
@@ -105,8 +105,8 @@
         <tbody>
 
           <td>{{#each drugs}} {{#if late}}</td>
-
-          <tr class="col-md-12 centerText">
+        {{> drug }}
+          {{!-- <tr class="col-md-12 centerText">
             <div class="row">
               <td class="col-md-2 taken" >
                 <input type="checkbox" {{bindAttr checked="isChecked" }}>
@@ -115,10 +115,14 @@
               <td class="col-md-2 columnDosage">{{this.drugDose}}</td>
               <td class="col-md-2 columnWidth">{{this.instructions}}</td>
               <td class="col-md-2 columnWidth">{{this.precautions}}</td>
-              <td class="col-md-2 columnWidth">{{this.currentQty}}</td>
+              {{#if this.currentQty.isOver10}}
+              <td class="col-md-2 columnWidth">{{this.currentQty.value}}</td>
+              {{else}}
+              <td class="col-md-2 columnWidth redNumber">{{this.currentQty.value}}</td>
+              {{/if}}
             </div>
             </td>
-          </tr>
+          </tr> --}}
           {{/if}} {{/each}}
         </tbody>
       </table>

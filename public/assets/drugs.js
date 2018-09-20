@@ -8,7 +8,17 @@ $(document).ready(function(){
 
     // console.log(time)
     $ (".lead").append(time);
-  
+
+    $(".drugCheckMark").on("click", function(event) {
+      console.log(this.parentElement.parentElement);
+      var row = this.parentElement.parentElement;
+      console.log(this.checked);
+      if(this.checked) {
+        row.classList.add("strikethrough")
+      } else {
+        row.classList.remove("strikethrough")
+      }
+    });
 
   $("#infoIn").on("click", function(){
 

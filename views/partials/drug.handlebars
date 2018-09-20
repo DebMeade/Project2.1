@@ -1,0 +1,27 @@
+          <tr class="col-md-12 centerText">
+            <div class="row">
+              <td class="col-md-2 taken" >
+                <input type="checkbox" class="drugCheckMark" {{bindAttr checked="isChecked" }}>
+              </td>
+              <td class="col-md-2 columnWidth">{{this.drugName}}</td>
+              <td class="col-md-2 columnDosage">{{this.drugDose}}</td>
+              <td class="col-md-2 columnWidth">
+                <details>
+                  <summary>Click Here</summary>
+                  {{this.instructions}}
+                  </details>
+                  </td>
+              <td class="col-md-2 columnWidth">
+                <details>
+                  <summary>Click Here</summary>
+                  {{this.precautions}}
+                </details>
+                </td>
+              {{#if this.currentQty.isOver10}}
+              <td class="col-md-2 columnWidth">{{this.currentQty.value}}</td>
+              {{else}}
+              <td class="col-md-2 columnWidth redNumber">{{this.currentQty.value}}</td>
+              {{/if}}
+            </div>
+            </td>
+          </tr>

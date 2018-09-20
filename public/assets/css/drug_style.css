@@ -97,3 +97,13 @@ body {background: url("/assets/img/background4.jpg") no-repeat fixed top left;}
 #eveningTable2 {
   background-color: rgba(38, 28.6, 95.7, 0.15);
 }
+
+.redNumber {
+  color: red;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: grey;
+  font-style: italic;
+}
