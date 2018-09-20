@@ -107,7 +107,7 @@ $(document).ready(function(){
        console.log("drug in:", drug_db_input);
 
 
-       $.ajax("/drugList", {
+       $.ajax("/input", {
         type: "POST",
         data: drug_db_input
       }).then(
@@ -120,7 +120,7 @@ $(document).ready(function(){
    
        var contact_db_pharm = {
    
-         name: $("#name").val(),
+         pharmName: $("#pharmName").val(),
          type: "pharmacy",
          inputAddress: $("#inputAddress").val(),
          inputCity: $("#inputCity").val(),
@@ -132,7 +132,7 @@ $(document).ready(function(){
    
        var contact_db_prescr = {
    
-         name: $("#name2").val(),
+         doctorName: $("#doctorName").val(),
          type: "prescriber",
          inputAddress: $("#inputAddress2").val(),
          inputCity: $("#inputCity2").val(),
