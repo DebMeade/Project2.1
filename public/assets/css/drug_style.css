@@ -104,10 +104,14 @@ body {
   color: red;
 }
 
-.strikethrough {
-  text-decoration: line-through;
-  color: grey;
+.strikethrough, .strikethrough .redNumber{
+  /* text-decoration: line-through; */
+  color:#a8a8a8;
   font-style: italic;
+}
+
+#eveningTable2 .strikethrough, #eveningTable2 .strikethrough .redNumber{
+  color: #7e7e7e;
 }
 .footer {
   margin-top: 10px;

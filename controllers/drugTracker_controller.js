@@ -24,6 +24,10 @@ router.get("/", function(req, res){
   });
 });
 
+router.get("/addnew", function(req, res) {
+  res.render("input");
+});
+
 router.post("/drugList", function(req, res){
   db.create([
     "ndcNum", "rxNum", "drugName", "drugForm", "drugFormSize", "drugFormMeasure", "bottleFullQty", "bottlePartialQty",
@@ -89,7 +93,7 @@ router.post("/drugList", function(req, res){
  
 
 //   // Create a new example
-//   router.post("/", function(req, res) {
+//   router.post("/", function(req, res) {1
 //     db.create(req.body).then(function(drug_db) {
 //       res.json(drug_db);
 //     });

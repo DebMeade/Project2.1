@@ -20,6 +20,17 @@ $(document).ready(function(){
       }
     });
 
+    // $(".drugCheckMark").on("click", function(event) {
+    //   console.log(this.parentElement.parentElement);
+    //   var summary = this.parentElement.parentElement;
+    //   console.log(this.checked);
+    //   if(this.checked) {
+    //     summary.classList.add("strikethrough")
+    //   } else {
+    //     summar.classList.remove("strikethrough")
+    //   }
+    // });
+
   $("#infoIn").on("click", function(){
 
 
