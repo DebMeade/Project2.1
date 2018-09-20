@@ -84,18 +84,20 @@
   text-align: center;
 }
 
-body {background: url("/assets/img/background4.jpg") no-repeat fixed top left;}
+body {
+  background: url("/assets/img/background7.1.jpg") no-repeat fixed top left;
+}
 
 #morningTable2 {
-  background-color: rgba(195, 114, 124, 0.15);
+  background-color: rgba(195, 114, 124, 0.2);
 }
 
 #afternoonTable2 {
-  background-color: rgba(41, 171, 135, 0.15);
+  background-color: rgba(41, 171, 135, 0.2);
 }
 
 #eveningTable2 {
-  background-color: rgba(38, 28.6, 95.7, 0.15);
+  background-color: rgba(38, 28.6, 95.7, 0.2);
 }
 
 .redNumber {
@@ -107,3 +109,14 @@ body {background: url("/assets/img/background4.jpg") no-repeat fixed top left;}
   color: grey;
   font-style: italic;
 }
+.footer {
+  margin-top: 10px;
+  text-align: center;
+  height: 40px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 5px;
+  clear: both;
+}
+
