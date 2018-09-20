@@ -1,26 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Daily User Log</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" media="screen" href="../../public/assets/css/drug_style.css" />
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="../../public/assets/drugs.js"></script>
-</head>
-
-<body>
-
   <div class="container">
-    <form>
+    <form class="formgroup">
       <div class="card">
         <div class="card-header h-title">
           <h4>Enter the information for each prescription bottle on this form</h4>
@@ -34,7 +13,7 @@
             </div>
             <div class="form-group col-md-6">
               <label for="rxNum">Rx #</label>
-              <input type="text" class="form-control" id="rxNum" placeholder="rx #">
+              <input type="text" class="form-control" id="rxNum" placeholder="Rx #">
             </div>
           </div>
           <div class="form-group">
@@ -76,11 +55,11 @@
 
               <div class="form-group">
                 <select class="form-control" id="drugFormMeasure">
-                  <option>mg: milligrams</option>
-                  <option>mcg: micrograms</option>
-                  <option>g: grams</option>
-                  <option>mL: liters (liquid)</option>
-                  <option>L: liters (liquid)</option>
+                  <option>mg</option>
+                  <option>mcg</option>
+                  <option>g</option>
+                  <option>mL</option>
+                  <option>L</option>
 
                 </select>
               </div>
@@ -162,19 +141,19 @@
           <div class="form-row">
             <div class="form-group col-md-10 ckboxrow">
               <div class="form-check form-check-inline ckbox">
-                <input class="form-check-input ckbox" type="checkbox" name="drugFreq" id="early" value="early">
+                <input class="form-check-input ckbox" type="checkbox" name="drugTime" id="early" value="early">
                 <label class="form-check-label" for="early">morning</label>
               </div>
               <div class="form-check form-check-inline ckbox">
-                <input class="form-check-input ckbox" type="checkbox" name="drugFreq" id="mid" value="mid">
+                <input class="form-check-input ckbox" type="checkbox" name="drugTime" id="mid" value="mid">
                 <label class="form-check-label" for="mid">mid-day</label>
               </div>
               <div class="form-check form-check-inline ckbox">
-                <input class="form-check-input ckbox" type="checkbox" name="drugFreq" id="late" value="late">
+                <input class="form-check-input ckbox" type="checkbox" name="drugTime" id="late" value="late">
                 <label class="form-check-label" for="late">evening</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" name="drugFreq" id="non" value="non">
+                <input class="form-check-input" type="checkbox" name="drugTime" id="non" value="non">
                 <label class="form-check-label" for="non">not specified</label>
               </div>
             </div>
@@ -202,7 +181,7 @@
         <div class="col-lg-5 pharmacy-side">
           <div class="form-group">
             <label for="name">Pharmacy Information</label>
-            <input type="text" class="form-control" id="name" data-type="pharmacy" placeholder="Pharmacy name">
+            <input type="text" class="form-control" id="pharmName" data-type="pharmacy" placeholder="Pharmacy name">
           </div>
           <div class="form-group">
             <label for="inputAddress">Address</label>
@@ -293,7 +272,7 @@
         <div class="col-lg-5 prescriber-side">
           <div class="form-group">
             <label for="name2">Doctor or Presciber Information</label>
-            <input type="text" class="form-control" id="name2" data-type="prescriber" placeholder="Dr. or prescriber name">
+            <input type="text" class="form-control" id="doctorName" data-type="prescriber" placeholder="Dr. or prescriber name">
           </div>
           <div class="form-group">
             <label for="inputAddress2">Address</label>
@@ -388,81 +367,3 @@
       </div>
     </form>
   </div>
-
-  <!-- <script>
-
-
-
-    $(document).ready(function () {
-
-
-      $("InfoIn").on("click", function () {
-
-        var drug_db_input = {
-          ndcNum: $("#ndcNum").val(),
-          rxNum: $("#rxNum").val(),
-          drugName: $("#drugName").val().trim(),
-          rxNum: $("#rxNum").val(),
-          drugForm: $('input:radio[name=drugForm]:checked').val(),
-          drugFormSize: $("#drugFormSize").val(),
-          drugFormMeasure: $("#drugFormMeasure").val(),
-          bottleFullQty: $("#bottleFullQty").val(),
-          bottlePartialQty: $("#bottlePartialQty").val(),
-          rxRefills: $("#rxRefills").val(),
-          rxWritten: $("#rxWritten").val(),
-          rxDiscard: $("#rxDiscard").val(),
-          rxReorder: $("#rxReorder").val(),
-          drugDose: $("#drugDose").val(),
-          drugFreq: $("#drugFreq").val(),
-          drugTime: $("#drugTime").val(),
-          instructions: $("#instructions").val(),
-          precautions: $("#precautions").val(),
-          rxFilled: $("#rxFilled").val()
-
-        }
-
-        console.log("drug in:", drug_db_input);
-
-
-
-        var contact_db_pharm = {
-
-          name: $("#name").val(),
-          type: "pharmacy",
-          inputAddress: $("#inputAddress").val(),
-          inputCity: $("#inputCity").val(),
-          inputState: $("#inputState").val(),
-          inputZip: $("#inputZip").val(),
-          email: $("#email").val(),
-          phone: $("#phone").val()
-        }
-
-        var contact_db_prescr = {
-
-          name: $("#name2").val(),
-          type: "prescriber",
-          inputAddress: $("#inputAddress2").val(),
-          inputCity: $("#inputCity2").val(),
-          inputState: $("#inputState2").val(),
-          inputZip: $("#inputZip2").val(),
-          email: $("#email2").val(),
-          phone: $("#phone2").val()
-        }
-        console.log("pharm ctc:", contact_db_pharm);
-        console.log("dr ctc:", contact_db_prescr);
-      })
-    });
-  </script> -->
-
-
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" -->
-    <!-- crossorigin="anonymous"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-    crossorigin="anonymous"></script>
-
-</body>
-
-</html>
