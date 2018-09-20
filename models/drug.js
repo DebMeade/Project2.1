@@ -20,10 +20,20 @@ var contacts = {
 
 }
 
-//module.exports = drug;
-//module.exports = drugContacts;
+var inventory = {
+
+    all: function(cb){
+        orm.all("inventory", function(res){
+            cb(res);
+        });
+    }
+
+}
+
 
 module.exports = {
     drugs: drugs, 
-    contacts: contacts
+    contacts: contacts,
+    inventory: inventory,
 }
+

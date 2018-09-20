@@ -6,6 +6,7 @@ var router = express.Router();
 
 var db = require("../models/drug.js");
 
+var path = require("path")
 
 router.get("/", function(req, res){
   var hbsObjectOne;
@@ -13,69 +14,93 @@ router.get("/", function(req, res){
     hbsObjectOne = {
       drugs: data
     };
-    console.log(hbsObjectOne);
+    console.log(hbsObjectOne.drugs[3].drugName);
   });
     db.contacts.all(function(data){
       var hbsObjectTwo = {
         contacts: data
       };
-      console.log(hbsObjectTwo);
+      console.log(hbsObjectTwo.contacts[0].doctorName);
 
     });
-    db.drugs.all(function(data){
+    db.inventory.all(function(data){
       var hbsObjectThree = {
-        drugs: data
+        inventory: data
       };
-      console.log(hbsObjectThree.drugs[0].drugName);
-      console.log(hbsObjectThree.drugs[0].currentQty);
+      console.log(hbsObjectThree.inventory[0].currentQTY);
+
     });
+
     res.render("index", hbsObjectOne);
  });
 
- router.post("/api/drugInfo", function(req, res){
-  db.create([
-    "ndcNum", "rxNum", "drugName", "drugForm", "drugFormSize", "drugFormMeasure", "bottleFullQty", "bottlePartialQty",
-    "rxRefills",
+ router.post("/drugList", function(req, res){
+  db.drugs.create([
+    "ndcNum", "rxNum", "pharmName", "doctorName","drugName", "drugForm", "drugFormSize", "drugFormMeasure", "currentQty", "bottleFullQty", "bottlePartialQty",
     "rxWritten",
+    "rxFilled",
     "rxDiscard",
     "rxReorder",
     "drugDose",
+    "drugFreq",
     "early",
-    "mid",
+    "middle",
     "late",
     "instructions",
-    "precautions",
-    "rxFilled"
+    "precautions"
   ],
 [
   req.body.ndcNum,
   req.body.rxNum,
+  req.body.pharmName,
+  req.body.doctorName,
   req.body.drugName,
   req.body.drugForm,
   req.body.drugFormSize,
   req.body.drugFormMeasure,
+  req.body.currentQty,
   req.body.bottleFullQty,
   req.body.bottlePartialQty,
-  req.body.rxRefills,
   req.body.rxWritten,
+  req.body.rxFilled,
   req.body.rxDiscard,
   req.body.rxReorder,
   req.body.drugDose,
+  req.body.drugFreq,
   req.body.early,
-  req.body.mid,
+  req.body.middle,
   req.body.late,
   req.body.instructions,
-  req.body.precautions,
-  req.body.rxFilled
+  req.body.precautions
 ], function(result){
   res.json({id: result.insertId});
 });
+//});
 
+// res.render instead???
+
+
+  // var hbsObjectOne;
+  // db.drugs.all(function(data){
+  //   hbsObjectOne = {
+  //     drugs: data
+  //   };
+  //   console.log(hbsObjectOne);
+  // });
+  //   db.contacts.all(function(data){
+  //     var hbsObjectTwo = {
+  //       contacts: data
+  //     };
+  //     console.log(hbsObjectTwo);
+
+  //   });
+  //   res.render("index", hbsObjectOne);
+ 
+});
+
+router.get("/input", function(req, res){
+res.sendFile(path.resolve("public/input.html"));
 })
-
-
-
-
 
 // module.exports = function(app) {
  
@@ -88,6 +113,10 @@ router.get("/", function(req, res){
 //   });
 // }
 
+// router.get("/drugList", function(req, res) {
+//   res.render("index");
+  
+// })
   
 // })
 

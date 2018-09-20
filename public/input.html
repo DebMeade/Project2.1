@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Daily User Log</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="../../public/assets/css/drug_style.css" />
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <form>
+      <div class="card">
+        <div class="card-header h-title">
+          <h4>Enter the information for each prescription bottle on this form</h4>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="ndcNum">NDC Number</label>
+              <input type="text" class="form-control" id="ndcNum" placeholder="NDC number">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="rxNum">Rx #</label>
+              <input type="text" class="form-control" id="rxNum" placeholder="rx #">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="drugName">Drug Name</label>
+            <input type="text" class="form-control" id="drugName" placeholder="DRUG NAME">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="card mid-card">
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group col-md-5">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="drugForm" id="inlineRadio1" value="pill">
+                <label class="form-check-label" for="inlineRadio1">pill</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="drugForm" id="inlineRadio2" value="tablet">
+                <label class="form-check-label" for="inlineRadio2">tablet</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="drugForm" id="inlineRadio3" value="capsule">
+                <label class="form-check-label" for="inlineRadio3">capsule</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="drugForm" id="inlineRadio3" value="liquid">
+                <label class="form-check-label" for="inlineRadio3">liquid</label>
+              </div>
+            </div>
+            <div class="form-group col-md-2">
+              <input type="number" class="form-control" id="drugFormSize" placeholder="Size each">
+            </div>
+            <div class="form-group col-md-2">
+              <div class="form-group">
+                <select class="form-control" id="drugFormMeasure">
+                  <option>mg: milligrams</option>
+                  <option>mcg: micrograms</option>
+                  <option>g: grams</option>
+                  <option>mL: liters (liquid)</option>
+                  <option>L: liters (liquid)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- row end -->
+          <div class="form-row">
+            <div class="custom-control-inline col-md-3">
+              <label for="drugFormSize">Quantity if full:&nbsp;&nbsp;</label>
+              <input type="number" class="custom-control-inline" id="bottleFullQty" placeholder="Qty">
+            </div>
+            <div class="custom-control-inline col-md-4">
+              <label for="drugFormSize">Quantity if partially used: &nbsp;&nbsp;</label>
+              <input type="number" class="custom-control-inline" id="bottlePartialQty" placeholder="Qty">
+            </div>
+            <div class="custom-control-inline col-md-3">
+              <label for="rxRefills">Refills: &nbsp;&nbsp;</label>
+              <input type="number" class="custom-control-inline" id="rxRefills" placeholder="refills">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- row end -->
+      <div class="card date-card">
+        <div class="card-body">
+          <div class="form-group row">
+            <label for="rxWritten" class="col-4 col-form-label">Date the prescription was written</label>
+            <div class="col-4">
+              <input class="form-control" type="date" value="" id="rxWritten">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="rxFilled" class="col-4 col-form-label">Date the prescription was filled</label>
+            <div class="col-4">
+              <input class="form-control" type="date" value="" id="rxFilled">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="rxDiscard" class="col-4 col-form-label">Date the prescription must be discarded</label>
+            <div class="col-4">
+              <input class="form-control" type="date" value="" id="rxDiscard">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="rxReorder" class="col-4 col-form-label">Reorder Date (if given)</label>
+            <div class="col-4">
+              <input class="form-control" type="date" value="" id="rxReorder">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mid-card">
+        <div class="card-body">
+          <div class="form-row">
+            <div class="custom-control-inline col-md-5">
+              <label for="drugDose">Drug Dose (take how many):&nbsp;&nbsp;</label>
+              <input type="number" class="custom-control-inline" id="drugDose" placeholder="Qty">
+            </div>
+            <div class="custom-control-inline col-md-5">
+              <label for="drugFreq">Take it how often each day? &nbsp;&nbsp;</label>
+              <input type="number" class="custom-control-inline" id="drugFreq" placeholder="Qty">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-10 ckboxrow">
+              <div class="form-check form-check-inline ckbox">
+                <input class="form-check-input ckbox" type="checkbox" name="drugFreq" id="early" value="early">
+                <label class="form-check-label" for="early">morning</label>
+              </div>
+              <div class="form-check form-check-inline ckbox">
+                <input class="form-check-input ckbox" type="checkbox" name="drugFreq" id="mid" value="mid">
+                <label class="form-check-label" for="mid">mid-day</label>
+              </div>
+              <div class="form-check form-check-inline ckbox">
+                <input class="form-check-input ckbox" type="checkbox" name="drugFreq" id="late" value="late">
+                <label class="form-check-label" for="late">evening</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="drugFreq" id="non" value="non">
+                <label class="form-check-label" for="non">not specified</label>
+              </div>
+            </div>
+          </div>
+          <!-- row end -->
+          <div class="form-group last-sec">
+            <label for="instructions">Instructions:</label>
+            <textarea class="form-control" id="instructions" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="precautions">Precautions:</label>
+            <textarea class="form-control" id="precautions" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="form-row">
+        <!-- left side -->
+        <div class="col-lg-5 pharmacy-side">
+          <div class="form-group">
+            <label for="pharmName">Pharmacy Information</label>
+            <input type="text" class="form-control" id="name" data-type="pharmacy" placeholder="Pharmacy name">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputState">State</label>
+              <select id="inputState" class="form-control">
+  ...

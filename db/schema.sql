@@ -5,6 +5,7 @@ USE drugTracker_db;
 
 CREATE TABLE drugs
 (
+    id INT (40) AUTO_INCREMENT,
     ndcNum INT (40) NOT NULL, 
     rxNum   INT (40) NOT NULL,
     doctorName VARCHAR(40) NOT NULL,
@@ -29,17 +30,16 @@ CREATE TABLE drugs
     precautions TEXT NOT NULL,
 	
 	PRIMARY KEY
-    (ndcNum)
+    (id)
 );
 
 USE drugTracker_db;
 
 CREATE TABLE contacts
 (
-    id INT (40) AUTO_INCREMENT,  
-    type VARCHAR (40) NOT NULL,         
+    id INT (40) AUTO_INCREMENT, 
+    doctorName VARCHAR (40) NULL,          
     pharmName VARCHAR (40) NULL,
-    doctorName VARCHAR (40) NULL,
     address VARCHAR (40) NOT NULL,
     city VARCHAR (40) NOT NULL, 
     state VARCHAR (40) NOT NULL, 
@@ -47,6 +47,18 @@ CREATE TABLE contacts
     locationId VARCHAR (40) NULL,    
     email VARCHAR (40) NULL, 
     phone VARCHAR (40) NOT NULL,
+
+    PRIMARY KEY
+    (id)
+);
+
+USE drugTracker_db;
+
+CREATE TABLE inventory
+(
+    id INT (40) AUTO_INCREMENT, 
+    drugName VARCHAR (40) NOT NULL, 
+    currentQTY INT (40) NOT NULL,
 
     PRIMARY KEY
     (id)
