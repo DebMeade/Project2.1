@@ -2,13 +2,15 @@ DROP DATABASE IF EXISTS drugTracker_db;
 CREATE DATABASE drugTracker_db;
 USE drugTracker_db;
 
+DROP TABLE IF EXISTS drugs;
+
 CREATE TABLE drugs
 (
     id INT (40) AUTO_INCREMENT,
     ndcNum INT (40) NOT NULL, 
     rxNum   INT (40) NOT NULL,
+    pharmName VARCHAR(40) NOT NULL,
     doctorName VARCHAR(40) NOT NULL,
-    pharmName VARCHAR(40) NOT NULL, 
     drugName VARCHAR (40) NOT NULL,
     drugForm VARCHAR (40) NOT NULL, 
     drugFormSize INT (40) NULL, 
@@ -33,9 +35,12 @@ CREATE TABLE drugs
 );
 
 USE drugTracker_db;
-
+DROP TABLE IF EXISTS contacts;
 CREATE TABLE contacts
 (
+    id INT (40) AUTO_INCREMENT,  
+    pharmName VARCHAR (40) NOT NULL,         
+    doctorName VARCHAR (40) NOT NULL,
     id INT (40) AUTO_INCREMENT, 
     doctorName VARCHAR (40) NULL,          
     pharmName VARCHAR (40) NULL,
@@ -62,3 +67,57 @@ CREATE TABLE inventory
     PRIMARY KEY
     (id)
 );
+
+USE drugTracker_db;
+DROP TABLE IF EXISTS inventory;
+CREATE TABLE inventory
+(
+    id INT (40) AUTO_INCREMENT,  
+    drugName VARCHAR (40) NOT NULL,
+    bottleFullQty INT,
+    bottlePartialQty INT, 
+    drugDose INT,,
+    drugFrew INT,
+    bottleCount INT
+    PRIMARY KEY
+    (id)
+);
+
+
+SELECT drugName, SUM(bottleFullQty - bottlePartialQty) AS inputQty FROM drugs GROUP BY drugName;
+
+
+INSERT INTO inventory(drugName)   
+SELECT DISTINCT drugName  
+FROM drugs   
+WHERE drugName NOT IN(SELECT drugName FROM inventory);
+
+
+This is the one that works!
+
+INSERT INTO inventory (drugName)
+SELECT DISTINCT`drugName`
+FROM drugs;
+
+
+
+
+
+
+almost:
+
+INSERT INTO inventory (drugName, totalAvailable)
+SELECT DISTINCT`drugName`, GROUP BY drugName SUM(`bottleFullQty`- `bottlePartialQty`) 
+FROM drugs;
+
+
+
+
+
+INSERT INTO inventory (drugName, bottleFullQty, bottlePartialQty, drugDose, drugFreq, bottleCount)
+SELECT drugName, sum(`bottleFullQty`) bottleFullQty, sum(bottlePartialQty) bottlePartialQty, drugDose, drugFreq, count(`drugName`) bottleCount
+FROM drugs
+GROUP BY drugName, drugDose, drugFreq
+
+
+SELECT drugName, SUM((bottleFullQty - bottlePartialQty)/(drugDose * drugFreq)) AS daysLeft FROM inventory GROUP BY drugName;

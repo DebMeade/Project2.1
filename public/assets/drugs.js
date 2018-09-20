@@ -2,21 +2,21 @@ $(document).ready(function(){
 
   //adding date to dateTitle div
     // var time = new Date().format("YYYY-MM-DD");
-    var time = moment().format("dddd, MMMM Do YYYY");
+    // var time = moment().format("dddd, MMMM Do YYYY");
 
-    // console.log(time)
-    $ (".lead").append(time);
+    // // console.log(time)
+    // $ (".lead").append(time);
 
-    $(".drugCheckMark").on("click", function(event) {
-      console.log(this.parentElement.parentElement);
-      var row = this.parentElement.parentElement;
-      console.log(this.checked);
-      if(this.checked) {
-        row.classList.add("strikethrough")
-      } else {
-        row.classList.remove("strikethrough")
-      }
-    });
+    // $(".drugCheckMark").on("click", function(event) {
+    //   console.log(this.parentElement.parentElement);
+    //   var row = this.parentElement.parentElement;
+    //   console.log(this.checked);
+    //   if(this.checked) {
+    //     row.classList.add("strikethrough")
+    //   } else {
+    //     row.classList.remove("strikethrough")
+    //   }
+    // });
 
     // $(".drugCheckMark").on("click", function(event) {
     //   console.log(this.parentElement.parentElement);
@@ -107,7 +107,7 @@ $(document).ready(function(){
        console.log("drug in:", drug_db_input);
 
 
-       $.ajax("/drugList", {
+       $.ajax("/input", {
         type: "POST",
         data: drug_db_input
       }).then(
@@ -120,7 +120,7 @@ $(document).ready(function(){
    
        var contact_db_pharm = {
    
-         name: $("#name").val(),
+         pharmName: $("#pharmName").val(),
          type: "pharmacy",
          inputAddress: $("#inputAddress").val(),
          inputCity: $("#inputCity").val(),
@@ -132,7 +132,7 @@ $(document).ready(function(){
    
        var contact_db_prescr = {
    
-         name: $("#name2").val(),
+         doctorName: $("#doctorName").val(),
          type: "prescriber",
          inputAddress: $("#inputAddress2").val(),
          inputCity: $("#inputCity2").val(),
