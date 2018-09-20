@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
 
   //adding date to dateTitle div
