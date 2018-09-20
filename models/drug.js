@@ -8,6 +8,12 @@ var drugs = {
         });
     },
 
+    create: function(cols, vals, cb){
+        orm.create("drugs", cols, vals, function(res){
+            cb(res);
+        })
+    }
+
     //     all: function(cb){
     //     orm.all("contacts", function(res){
     //         cb(res);
@@ -25,6 +31,8 @@ var contacts = {
     }
 
 }
+
+
 
 //module.exports = drug;
 //module.exports = drugContacts;
