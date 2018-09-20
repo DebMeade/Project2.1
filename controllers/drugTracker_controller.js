@@ -12,11 +12,22 @@ var path = require("path");
 router.get("/", function(req, res){
   db.drugs.all(function(data){
     var hbsObject = {
-      drugs: data
+      drugs: data.map(  function(drug) {
+        if(drug.currentQty > 10){
+          drug.currentQty = {value: drug.currentQty, isOver10: true};
+        } else {
+          drug.currentQty = {value: drug.currentQty, isOver10: false};
+        }
+        return drug;
+      })
     };
-    console.log(hbsObject);
+    console.log(hbsObject.drugs[0]);
     res.render("index", hbsObject);
   });
+});
+
+router.get("/addnew", function(req, res) {
+  res.render("input");
 });
 
 router.post("/drugList", function(req, res){
@@ -92,7 +103,7 @@ res.sendFile(path.resolve("public/input.html"));
  
 
 //   // Create a new example
-//   router.post("/", function(req, res) {
+//   router.post("/", function(req, res) {1
 //     db.create(req.body).then(function(drug_db) {
 //       res.json(drug_db);
 //     });

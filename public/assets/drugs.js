@@ -1,10 +1,35 @@
 
-  //adding date to dateTitle div
-  $(document).ready(function() {
-    $ (".lead").append(new Date());
-    
-// input objects coming from input.html
 
+$(document).ready(function(){
+
+  //adding date to dateTitle div
+    // var time = new Date().format("YYYY-MM-DD");
+    // var time = moment().format("dddd, MMMM Do YYYY");
+
+    // // console.log(time)
+    // $ (".lead").append(time);
+
+    // $(".drugCheckMark").on("click", function(event) {
+    //   console.log(this.parentElement.parentElement);
+    //   var row = this.parentElement.parentElement;
+    //   console.log(this.checked);
+    //   if(this.checked) {
+    //     row.classList.add("strikethrough")
+    //   } else {
+    //     row.classList.remove("strikethrough")
+    //   }
+    // });
+
+    // $(".drugCheckMark").on("click", function(event) {
+    //   console.log(this.parentElement.parentElement);
+    //   var summary = this.parentElement.parentElement;
+    //   console.log(this.checked);
+    //   if(this.checked) {
+    //     summary.classList.add("strikethrough")
+    //   } else {
+    //     summar.classList.remove("strikethrough")
+    //   }
+    // });
 
   $(function(){
     $("#infoIn").on("click", function(event){
