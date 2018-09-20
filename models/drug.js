@@ -8,10 +8,17 @@ var drugs = {
         });
     },
 
+    getDrugQuantity: function(cb){
+
+        orm.getDrugQuantity(function(result) {
+            cb(result);
+        });
+    },       
+
     create: function(cols, vals, cb){
         orm.create("drugs", cols, vals, function(res){
             cb(res);
-        })
+        });
     }
 }
 var contacts = {
