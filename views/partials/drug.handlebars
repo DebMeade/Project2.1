@@ -1,0 +1,81 @@
+          <tr class="col-md-12 centerText">
+            <div class="row">
+              <td class="col-md-2 taken" >
+                <input type="checkbox" class="drugCheckMark" {{bindAttr checked="isChecked" }}>
+              </td>
+              <td class="col-md-2 columnWidth">{{this.drugName}}</td>
+              <td class="col-md-2 columnDosage">{{this.drugDose}}</td>
+              <td class="col-md-2 columnWidth">
+                {{!-- <details>
+                  <summary> --}}
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-light btnOpacity btn-sm" data-toggle="modal" data-target="#exampleModalLong">
+  View Instructions
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Instructions</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+                  {{!-- </summary> --}}
+                  {{!-- {{this.instructions}} --}}
+                  {{!-- </details> --}}
+                  </td>
+              <td class="col-md-2 columnWidth">
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-light btnOpacity btn-sm" data-toggle="modal" data-target="#exampleModalLong">
+  View Precautions
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Precautions</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+                {{!-- <details>
+                  <summary>Click Here</summary>
+                  {{this.precautions}}
+                </details> --}}
+                </td>
+              {{#if this.currentQty.isOver10}}
+              <td class="col-md-2 columnWidth">{{this.currentQty.value}}</td>
+              {{else}}
+              <td class="col-md-2 columnWidth redNumber">{{this.currentQty.value}}</td>
+              {{/if}}
+            </div>
+            </td>
+          </tr>

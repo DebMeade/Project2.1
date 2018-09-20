@@ -1,27 +1,138 @@
-{{!-- <div id="home">
+        <div class="container">
+        <p class="lead">Here is a list of your prescriptions for </p>
+        {{!-- <br> --}}
+        <hr>
+      </div>
+
+<div id="morningTable2">
   <div class="container">
     <div id="morning" class="col-md-12">
-      <h2>Morning Medications</h2>
-      {{#each drugs}} {{#unless mid}} {{#unless late}}
-      <ol class="col-md-8"></ol>
-      {{drugName}} {{drugDose}} {{instructions}} {{precautions}} {{currentQty}}
-      </ol>
-      {{/each}}
+      <br>
+      <br>
+      {{!-- <hr> --}}
+      <h2>Morning Medication</h2>
+      <hr>
+      <table class="col-md-12 morning">
+        <thead class="col-md-12 centerText">
+          <th>Taken</th>
+          <th>Drug Name</th>
+          <th>Dosage</th>
+          <th>Instructions</th>
+          <th>Precautions</th>
+          <th>Current Quantity</th>
+        </thead>
+        <tbody>
+
+          <td>{{#each drugs}} {{#if early}}</td>
+{{> drug }}
+          {{!-- <tr class="col-md-12 centerText">
+            <div class="row">
+              <td class="col-md-2 taken" >
+                <input type="checkbox" {{bindAttr checked="isChecked" }}>
+              </td>
+              <td class="col-md-2 columnWidth">{{this.drugName}}</td>
+              <td class="col-md-2 columnDosage">{{this.drugDose}}</td>
+              <td class="col-md-2 columnWidth">{{this.instructions}}</td>
+              <td class="col-md-2 columnWidth">{{this.precautions}}</td>
+              <td class="col-md-2 columnWidth">{{this.currentQty}}</td>
+            </div>
+            </td>
+          </tr> --}}
+          {{/if}} {{/each}}
+        </tbody>
+      </table>
+      <hr>
     </div>
   </div>
 </div>
 
-<div id="morningTable">
+
+{{!-- Afernoon --}}
+<div id="afternoonTable2">
   <div class="container">
-    <div id="morning" class="col-md-12">
-      <h2>Morning Medications</h2>
-      <thead>
-        
-      </thead>
-      <tbody>
-        {{#each drugs}} {{#unless mid}} {{unless late}}
-          <tr></tr>
-      </tbody>
+    <div id="afternoon" class="col-md-12">
+      <br>
+      <br>
+      {{!-- <hr> --}}
+      <h2>Afternoon Medication</h2>
+      <hr>
+      <table class="col-md-12 afternoon">
+        <thead class="col-md-12 centerText">
+          <th>Taken</th>
+          <th>Drug Name</th>
+          <th>Dosage</th>
+          <th>Instructions</th>
+          <th>Precautions</th>
+          <th>Current Quantity</th>
+        </thead>
+        <tbody>
+
+          <td>{{#each drugs}} {{#if middle}}</td>
+{{> drug }}
+          {{!-- <tr class="col-md-12 centerText">
+            <div class="row">
+              <td class="col-md-2 taken" >
+                <input type="checkbox" {{bindAttr checked="isChecked" }}>
+              </td>
+              <td class="col-md-2 columnWidth">{{this.drugName}}</td>
+              <td class="col-md-2 columnDosage">{{this.drugDose}}</td>
+              <td class="col-md-2 columnWidth">{{this.instructions}}</td>
+              <td class="col-md-2 columnWidth">{{this.precautions}}</td>
+              <td class="col-md-2 columnWidth">{{this.currentQty}}</td>
+            </div>
+            </td>
+          </tr> --}}
+          {{/if}} {{/each}}
+        </tbody>
+      </table>
+      <hr>
     </div>
   </div>
-</div> --}}
+</div>
+
+{{!-- Evening --}}
+<div id="eveningTable2">
+  <div class="container">
+    <div id="evening" class="col-md-12">
+      <br>
+      <br>
+      {{!-- <hr> --}}
+      <h2>Evening Medication</h2>
+      <hr>
+      <table class="col-md-12 evening">
+        <thead class="col-md-12 centerText">
+          <th>Taken</th>
+          <th>Drug Name</th>
+          <th>Dosage</th>
+          <th>Instructions</th>
+          <th>Precautions</th>
+          <th>Current Quantity</th>
+        </thead>
+        <tbody>
+
+          <td>{{#each drugs}} {{#if late}}</td>
+        {{> drug }}
+          {{!-- <tr class="col-md-12 centerText">
+            <div class="row">
+              <td class="col-md-2 taken" >
+                <input type="checkbox" {{bindAttr checked="isChecked" }}>
+              </td>
+              <td class="col-md-2 columnWidth">{{this.drugName}}</td>
+              <td class="col-md-2 columnDosage">{{this.drugDose}}</td>
+              <td class="col-md-2 columnWidth">{{this.instructions}}</td>
+              <td class="col-md-2 columnWidth">{{this.precautions}}</td>
+              {{#if this.currentQty.isOver10}}
+              <td class="col-md-2 columnWidth">{{this.currentQty.value}}</td>
+              {{else}}
+              <td class="col-md-2 columnWidth redNumber">{{this.currentQty.value}}</td>
+              {{/if}}
+            </div>
+            </td>
+          </tr> --}}
+          {{/if}} {{/each}}
+        </tbody>
+      </table>
+      <hr>
+    </div>
+  </div>
+</div>

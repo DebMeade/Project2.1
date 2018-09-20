@@ -57,16 +57,17 @@
   border-bottom: 1px solid black;
 }
 
-.rx {
+/* .rx { */
   /* margin-left: 65%; */
-  height: 100px;
+  /* height: 100px;
   width: 100px;
   float: right;
   margin-top: 5px;
   position: relative;
   bottom: 105px;
   right: 20px;
-} 
+  z-index: 2;
+}  */
 
 .columnWidth {
   width: 18% !important;
@@ -84,26 +85,46 @@
   text-align: center;
 }
 
-body {background: url("/assets/img/background4.jpg") no-repeat fixed top left;}
+body {
+  background: url("/assets/img/background7.1.jpg") no-repeat fixed top left;
+}
 
 #morningTable2 {
-  background-color: rgba(195, 114, 124, 0.15);
+  background-color: rgba(195, 114, 124, 0.2);
 }
 
 #afternoonTable2 {
-  background-color: rgba(41, 171, 135, 0.15);
+  background-color: rgba(41, 171, 135, 0.2);
 }
 
 #eveningTable2 {
-  background-color: rgba(38, 28.6, 95.7, 0.15);
+  background-color: rgba(38, 28.6, 95.7, 0.2);
 }
 
 .redNumber {
   color: red;
 }
 
-.strikethrough {
-  text-decoration: line-through;
-  color: grey;
+.strikethrough, .strikethrough .redNumber{
+  /* text-decoration: line-through; */
+  color:#a8a8a8;
   font-style: italic;
 }
+
+#eveningTable2 .strikethrough, #eveningTable2 .strikethrough .redNumber{
+  color: #7e7e7e;
+}
+.footer {
+  margin-top: 10px;
+  text-align: center;
+  height: 40px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 5px;
+  clear: both;
+}
+
+/* .btnOpactiy {
+  background-color: rgba(255, 255, 255, 0.2); */
+/* } */

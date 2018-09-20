@@ -15,14 +15,16 @@
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/drug_style.css" />
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
-  <script src="assets/drugs.js"></script>
+ 
 </head>
 
 <body>
+  <p></p>
+  <div class="container">
   <div class="header">
         <ul class="nav nav-pills col-md-8">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Doctors and Pharmacies</a>
@@ -36,9 +38,11 @@
 
       </ul>
         <h1 class="display-4 animated slideInLeft col-md-8">Hello, user!</h1>
-        <img src="assets/img/rx.png" class="rx animated slideInRight col-md-4"/>
+        {{!-- <img src="assets/img/rx1.png" class="rx animated slideInRight col-md-4"/> --}}
         <div id = "dateTitle"></div>
-        <p class="lead">Here is a list of your prescriptions for </p>
+        {{!-- <p class="lead">Here is a list of your prescriptions for </p> --}}
+        {{!-- <br> --}}
+        {{!-- <hr> --}}
         </div>
         <!-- <hr class="my-4"> -->
         <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
@@ -46,12 +50,15 @@
           <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
         </p>
   </div>
+  </div>
 
   {{{body}}}
 
 
  
-
+<footer class="footer">&copy 2018 Team Pill Poppers  
+<a href="https://github.com/DebMeade/Project2.1" target="_blank"><img src="assets/img/GitHub-Mark-32px.png"></a>
+</footer>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" -->
@@ -60,7 +67,8 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
     crossorigin="anonymous"></script>
-     <script src="drugs.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+     <script type="text/javascript" src="/assets/drugs.js"></script>
 
 </body>
 
