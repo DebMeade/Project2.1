@@ -2,21 +2,21 @@ $(document).ready(function(){
 
   //adding date to dateTitle div
     // var time = new Date().format("YYYY-MM-DD");
-    var time = moment().format("dddd, MMMM Do YYYY");
+    // var time = moment().format("dddd, MMMM Do YYYY");
 
-    // console.log(time)
-    $ (".lead").append(time);
+    // // console.log(time)
+    // $ (".lead").append(time);
 
-    $(".drugCheckMark").on("click", function(event) {
-      console.log(this.parentElement.parentElement);
-      var row = this.parentElement.parentElement;
-      console.log(this.checked);
-      if(this.checked) {
-        row.classList.add("strikethrough")
-      } else {
-        row.classList.remove("strikethrough")
-      }
-    });
+    // $(".drugCheckMark").on("click", function(event) {
+    //   console.log(this.parentElement.parentElement);
+    //   var row = this.parentElement.parentElement;
+    //   console.log(this.checked);
+    //   if(this.checked) {
+    //     row.classList.add("strikethrough")
+    //   } else {
+    //     row.classList.remove("strikethrough")
+    //   }
+    // });
 
     // $(".drugCheckMark").on("click", function(event) {
     //   console.log(this.parentElement.parentElement);

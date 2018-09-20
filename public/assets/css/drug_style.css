@@ -66,8 +66,17 @@
   position: relative;
   bottom: 105px;
   right: 20px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+} 
+=======
   z-index: 2;
 }  */
+>>>>>>> 58a9de9fedad65c5de6516fa50cc6a72b308e0c4
+=======
+  z-index: 2;
+}  */
+>>>>>>> 92fd6d9c90cfadd20e9782bbe16734327843f563
 
 .columnWidth {
   width: 18% !important;
@@ -79,6 +88,40 @@
 
 .columnDosage {
   width: 9% !important;
+<<<<<<< HEAD
+<<<<<<< HEAD
+}
+
+.centerText {
+  text-align: center;
+}
+
+body {background: url("/assets/img/background4.jpg") no-repeat fixed top left;}
+
+#morningTable2 {
+  background-color: rgba(195, 114, 124, 0.15);
+}
+
+#afternoonTable2 {
+  background-color: rgba(41, 171, 135, 0.15);
+}
+
+#eveningTable2 {
+  background-color: rgba(38, 28.6, 95.7, 0.15);
+}
+
+.redNumber {
+  color: red;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: grey;
+  font-style: italic;
+}
+=======
+=======
+>>>>>>> 92fd6d9c90cfadd20e9782bbe16734327843f563
 }
 
 .centerText {
@@ -128,3 +171,7 @@ body {
 /* .btnOpactiy {
   background-color: rgba(255, 255, 255, 0.2); */
 /* } */
+<<<<<<< HEAD
+>>>>>>> 58a9de9fedad65c5de6516fa50cc6a72b308e0c4
+=======
+>>>>>>> 92fd6d9c90cfadd20e9782bbe16734327843f563
