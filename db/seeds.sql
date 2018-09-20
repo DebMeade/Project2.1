@@ -1,5 +1,19 @@
 USE drugTracker_db;
 
+INSERT INTO contacts
+    (pharmName, doctorName, address, city, state, zip, locationId, email, phone)
+
+VALUES
+    ("Walgreens", "Dr. Matlock", "789 South Southern Street", "Littleton", "CO", "80128",
+        "RAF777", "drmatlock@realdoctor.com", "720-555-5555");
+
+USE drugTracker_db;
+
+INSERT INTO inventory
+    (drugName, currentQty)
+
+VALUES
+    ("Valium", 30);
 INSERT INTO drugs
     (ndcNum, rxNum, name , drugName, drugForm, drugFormSize, drugFormMeasure, currentQty, bottleFullQty,
     bottlePartialQty, rxWritten, rxFilled, rxDiscard, rxReorder, drugDose, drugFreq, early, mid, late,
@@ -31,6 +45,7 @@ VALUES
 USE drugTracker_db;
 
 INSERT INTO drugs
+    (ndcNum, rxNum, pharmName, doctorName , drugName, drugForm, drugFormSize, drugFormMeasure, currentQty, bottleFullQty,
     (ndcNum, rxNum, phramName, doctorName , drugName, drugForm, drugFormSize, drugFormMeasure, currentQty, bottleFullQty,
     bottlePartialQty, rxWritten, rxFilled, rxDiscard, rxReorder, drugDose, drugFreq, early, middle, late,
     instructions, precautions)
@@ -64,4 +79,8 @@ VALUES
 "instructions are still here here", "don't breathe"),
 (12345, 14321, "RiteAid #10", "Dr. Brown" , "Limpomatic", "tablet", 900, "g", 25, 120,
 0, "2017-09-03", "2017-09-03", "2017-09-03", "2017-09-03", 1, 1, true, false, false, 
+<<<<<<< HEAD
 "instructions are still here here", "don't breathe");
+=======
+"instructions are still here here", "don't breathe");
+>>>>>>> 8b9ef0764ee9dd39644f7961be7d2bdc43bf00a8

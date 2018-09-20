@@ -95,6 +95,11 @@ router.post("/input", function(req, res){
  
 });
 
+router.get("/drugInventory", function(req, res){
+  db.drugs.getDrugQuantity(function(result) {
+    console.log("result: " ,result);
+  })
+});
 router.get("/input", function(req, res){
 res.sendFile(path.resolve("public/input.html"));
 })
