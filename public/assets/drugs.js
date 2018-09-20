@@ -63,7 +63,7 @@
         drugForm: $('input:radio[name=drugForm]:checked').val(),
         drugFormSize: $("#drugFormSize").val(),
         drugFormMeasure: $("#drugFormMeasure").val(),
-        currentQty: $("#currentQty").val(),
+        // currentQty: $("#currentQty").val(),
         bottleFullQty: $("#bottleFullQty").val(),
         bottlePartialQty: $("#bottlePartialQty").val(),
         rxWritten: $("#rxWritten").val(),

@@ -28,6 +28,11 @@ var contacts = {
         orm.all("contacts", function(res){
             cb(res);
         });
+    },
+    create: function(cols, vals, cb){
+        orm.create("contacts", cols, vals, function(res){
+            cb(res);
+        })
     }
 
 }

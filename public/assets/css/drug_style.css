@@ -63,4 +63,47 @@
   width: 100px;
   float: right;
   margin-top: 5px;
+  position: relative;
+  bottom: 105px;
+  right: 20px;
+} 
+
+.columnWidth {
+  width: 18% !important;
+}
+
+.taken {
+  width: 5% !important; 
+}
+
+.columnDosage {
+  width: 9% !important;
+}
+
+.centerText {
+  text-align: center;
+}
+
+body {background: url("/assets/img/background4.jpg") no-repeat fixed top left;}
+
+#morningTable2 {
+  background-color: rgba(195, 114, 124, 0.15);
+}
+
+#afternoonTable2 {
+  background-color: rgba(41, 171, 135, 0.15);
+}
+
+#eveningTable2 {
+  background-color: rgba(38, 28.6, 95.7, 0.15);
+}
+
+.redNumber {
+  color: red;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: grey;
+  font-style: italic;
 }

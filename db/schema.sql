@@ -13,7 +13,7 @@ CREATE TABLE drugs
     drugForm VARCHAR (40) NOT NULL, 
     drugFormSize INT (40) NULL, 
     drugFormMeasure VARCHAR (40) NULL,
-    currentQty INT (40) NOT NULL,
+    currentQty INT (40) NULL,
     bottleFullQty INT (40) NOT NULL,
     bottlePartialQty INT (40) NOT NULL,
     rxWritten DATE NOT NULL, 

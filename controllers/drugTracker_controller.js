@@ -17,40 +17,12 @@ router.get("/", function(req, res){
     console.log(hbsObject);
     res.render("index", hbsObject);
   });
-
-//   db.contacts.all(function(data){
-//     var hbsObjectTwo = {
-//       contacts: data
-//     };
-//     console.log(hbsObjectTwo);
-
-//   });
-//   db.drugs.all(function(data){
-//     var hbsObjectThree = {
-//       drugs: data
-//     };
-//     console.log(hbsObjectThree.drugs[0].drugName);
-//     console.log(hbsObjectThree.drugs[0].currentQty);
-//   });
-//   db.contacts.all(function(data){
-//     var hbsObjectTwo = {
-//       contacts: data
-//     };
-//     console.log(hbsObjectTwo);
-
-//   });
-//   res.render("index", hbsObjectOne);
-// });
-
-
-
-
-
-
+});
 
 router.post("/drugList", function(req, res){
+  console.log('posting...');
   db.drugs.create([
-    "ndcNum", "rxNum", "pharmName", "doctorName","drugName", "drugForm", "drugFormSize", "drugFormMeasure", "currentQty", "bottleFullQty", "bottlePartialQty",
+    "ndcNum", "rxNum",  "pharmName", "doctorName","drugName", "drugForm", "drugFormSize", "drugFormMeasure", "bottleFullQty", "bottlePartialQty",
     "rxWritten",
     "rxFilled",
     "rxDiscard",
@@ -72,7 +44,7 @@ router.post("/drugList", function(req, res){
   req.body.drugForm,
   req.body.drugFormSize,
   req.body.drugFormMeasure,
-  req.body.currentQty,
+  // req.body.currentQty,
   req.body.bottleFullQty,
   req.body.bottlePartialQty,
   req.body.rxWritten,
@@ -132,7 +104,7 @@ res.sendFile(path.resolve("public/input.html"));
   
 // })
   
-})
+// })
 
 module.exports = router;
 
