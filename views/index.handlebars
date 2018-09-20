@@ -39,3 +39,90 @@
     </div>
   </div>
 </div>
+
+
+{{!-- Afernoon --}}
+<div id="afternoonTable2">
+  <div class="container">
+    <div id="afternoon" class="col-md-12">
+      <br>
+      <br>
+      {{!-- <hr> --}}
+      <h2>Afternoon Medication</h2>
+      <hr>
+      <table class="col-md-12 afternoon">
+        <thead class="col-md-12 centerText">
+          <th>Taken</th>
+          <th>Drug Name</th>
+          <th>Dosage</th>
+          <th>Instructions</th>
+          <th>Precautions</th>
+          <th>Current Quantity</th>
+        </thead>
+        <tbody>
+
+          <td>{{#each drugs}} {{#if middle}}</td>
+
+          <tr class="col-md-12 centerText">
+            <div class="row">
+              <td class="col-md-2 taken" >
+                <input type="checkbox" {{bindAttr checked="isChecked" }}>
+              </td>
+              <td class="col-md-2 columnWidth">{{this.drugName}}</td>
+              <td class="col-md-2 columnDosage">{{this.drugDose}}</td>
+              <td class="col-md-2 columnWidth">{{this.instructions}}</td>
+              <td class="col-md-2 columnWidth">{{this.precautions}}</td>
+              <td class="col-md-2 columnWidth">{{this.currentQty}}</td>
+            </div>
+            </td>
+          </tr>
+          {{/if}} {{/each}}
+        </tbody>
+      </table>
+      <hr>
+    </div>
+  </div>
+</div>
+
+{{!-- Evening --}}
+<div id="eveningTable2">
+  <div class="container">
+    <div id="evening" class="col-md-12">
+      <br>
+      <br>
+      {{!-- <hr> --}}
+      <h2>Evening Medication</h2>
+      <hr>
+      <table class="col-md-12 evening">
+        <thead class="col-md-12 centerText">
+          <th>Taken</th>
+          <th>Drug Name</th>
+          <th>Dosage</th>
+          <th>Instructions</th>
+          <th>Precautions</th>
+          <th>Current Quantity</th>
+        </thead>
+        <tbody>
+
+          <td>{{#each drugs}} {{#if late}}</td>
+
+          <tr class="col-md-12 centerText">
+            <div class="row">
+              <td class="col-md-2 taken" >
+                <input type="checkbox" {{bindAttr checked="isChecked" }}>
+              </td>
+              <td class="col-md-2 columnWidth">{{this.drugName}}</td>
+              <td class="col-md-2 columnDosage">{{this.drugDose}}</td>
+              <td class="col-md-2 columnWidth">{{this.instructions}}</td>
+              <td class="col-md-2 columnWidth">{{this.precautions}}</td>
+              <td class="col-md-2 columnWidth">{{this.currentQty}}</td>
+            </div>
+            </td>
+          </tr>
+          {{/if}} {{/each}}
+        </tbody>
+      </table>
+      <hr>
+    </div>
+  </div>
+</div>
