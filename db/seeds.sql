@@ -79,8 +79,4 @@ VALUES
 "instructions are still here here", "don't breathe"),
 (12345, 14321, "RiteAid #10", "Dr. Brown" , "Limpomatic", "tablet", 900, "g", 25, 120,
 0, "2017-09-03", "2017-09-03", "2017-09-03", "2017-09-03", 1, 1, true, false, false, 
-<<<<<<< HEAD
 "instructions are still here here", "don't breathe");
-=======
-"instructions are still here here", "don't breathe");
->>>>>>> 8b9ef0764ee9dd39644f7961be7d2bdc43bf00a8
