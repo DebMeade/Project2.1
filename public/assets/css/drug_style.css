@@ -72,11 +72,7 @@
 =======
   z-index: 2;
 }  */
->>>>>>> 58a9de9fedad65c5de6516fa50cc6a72b308e0c4
-=======
-  z-index: 2;
-}  */
->>>>>>> 92fd6d9c90cfadd20e9782bbe16734327843f563
+
 
 .columnWidth {
   width: 18% !important;
@@ -117,6 +113,7 @@ body {background: url("/assets/img/background4.jpg") no-repeat fixed top left;}
   color: grey;
   font-style: italic;
 }
+
 
 .centerText {
   text-align: center;
@@ -162,6 +159,9 @@ body {
   clear: both;
 }
 
-.btnOpactiy {
-  background-color: rgba(255, 255, 255, 0.2);
- }
+
+.btnOpacity {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+
