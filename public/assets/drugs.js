@@ -144,6 +144,45 @@ $(document).ready(function(){
        console.log("pharm ctc:", contact_db_pharm);
        console.log("dr ctc:", contact_db_prescr);
     
+
+    $("#ndcNum").val("");
+    $("#rxNum").val("");
+    $("#pharmName").val("");
+    $("#doctorName").val("");
+    $("#drugName").val("");
+    $('input:radio[name=drugForm]:checked').val("");
+    $("#drugFormSize").val("");
+    $("#drugFormMeasure").val("");
+    $("#bottleFullQty").val("");
+    $("#bottlePartialQty").val("");
+    $("#rxWritten").val("");
+    $("#rxRefills").val("");
+    $("#rxDiscard").val("");
+    $("#rxReorder").val("");
+    $("#drugDose").val("");
+    $("#drugFreq").val("");
+    $("#instructions").val("");
+    $("#precautions").val("");
+
+    $("#pharmName").val("");
+    $("#inputAddress").val("");
+    $("#inputCity").val("");
+    $("#inputState").val("");
+    $("#inputZip").val("");
+    $("#email").val("");
+    $("#phone").val("");
+
+    $("#doctorName").val("");
+    $("#inputAddress2").val("");
+    $("#inputCity2").val("");
+    $("#inputState2").val("");
+    $("#inputZip2").val("");
+    $("#email2").val("");
+    $("#phone2").val("");
+
+
+
+
      });
 
     })

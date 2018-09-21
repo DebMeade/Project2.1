@@ -88,8 +88,6 @@
 
 .columnDosage {
   width: 9% !important;
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
 
 .centerText {
@@ -118,10 +116,6 @@ body {background: url("/assets/img/background4.jpg") no-repeat fixed top left;}
   text-decoration: line-through;
   color: grey;
   font-style: italic;
-}
-=======
-=======
->>>>>>> 92fd6d9c90cfadd20e9782bbe16734327843f563
 }
 
 .centerText {
@@ -168,10 +162,6 @@ body {
   clear: both;
 }
 
-/* .btnOpactiy {
-  background-color: rgba(255, 255, 255, 0.2); */
-/* } */
-<<<<<<< HEAD
->>>>>>> 58a9de9fedad65c5de6516fa50cc6a72b308e0c4
-=======
->>>>>>> 92fd6d9c90cfadd20e9782bbe16734327843f563
+.btnOpactiy {
+  background-color: rgba(255, 255, 255, 0.2);
+ }
