@@ -114,7 +114,7 @@ router.get("/drugInventory", function(req, res){
   })
 });
 
-router.get("/input", function(req, res){
+router.get("/index", function(req, res){
 res.sendFile(path.resolve("public/input.html"));
 })
 
