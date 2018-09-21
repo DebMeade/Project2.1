@@ -70,7 +70,7 @@ function objToSql(ob) {
 
     getDrugQuantity: function(cb){
 
-      var queryString = "SELECT drugName, SUM(bottleFullQty - bottlePartialQty) AS totalAvailable FROM drugs GROUP BY drugName";
+      var queryString = "SELECT drugName, SUM((bottleFullQty - bottlePartialQty)/(drugDose * drugFreq))  AS daysLeft FROM inventory GROUP BY drugName";
 
       connection.query(queryString, function(err, result) {
         if (err) {
@@ -81,6 +81,8 @@ function objToSql(ob) {
       });
       
     },
+
+  
 
  
 
