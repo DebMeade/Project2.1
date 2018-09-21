@@ -20,6 +20,8 @@
   "homepage": "https://github.com/DebMeade/Project2.1#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "config": "^2.0.1",
+    "config.json": "0.0.4",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "moment": "^2.22.2",
