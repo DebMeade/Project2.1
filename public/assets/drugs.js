@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  // adding date to dateTitle div
+  
 
 var time = moment().format("dddd, MMMM Do YYYY");
 
