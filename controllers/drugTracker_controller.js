@@ -33,7 +33,16 @@ router.get("/input", function(req, res) {
 router.post("/input", function(req, res){
   console.log('posting...');
   db.drugs.create([
-    "ndcNum", "rxNum",  "pharmName", "doctorName","drugName", "drugForm", "drugFormSize", "drugFormMeasure", "bottleFullQty", "bottlePartialQty",
+    "ndcNum", 
+    "rxNum",  
+    "pharmName", 
+    "doctorName",
+    "drugName", 
+    "drugForm", 
+    "drugFormSize", 
+    "drugFormMeasure", 
+    "bottleFullQty", 
+    "bottlePartialQty",
     "rxWritten",
     "rxFilled",
     "rxDiscard",

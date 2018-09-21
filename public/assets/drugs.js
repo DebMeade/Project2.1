@@ -1,33 +1,24 @@
 $(document).ready(function(){
 
-  //adding date to dateTitle div
-    // var time = new Date().format("YYYY-MM-DD");
-    // var time = moment().format("dddd, MMMM Do YYYY");
+  // adding date to dateTitle div
 
-    // // console.log(time)
-    // $ (".lead").append(time);
+var time = moment().format("dddd, MMMM Do YYYY");
 
-    // $(".drugCheckMark").on("click", function(event) {
-    //   console.log(this.parentElement.parentElement);
-    //   var row = this.parentElement.parentElement;
-    //   console.log(this.checked);
-    //   if(this.checked) {
-    //     row.classList.add("strikethrough")
-    //   } else {
-    //     row.classList.remove("strikethrough")
-    //   }
-    // });
+console.log(time)
+$ (".lead").append(time);
 
-    // $(".drugCheckMark").on("click", function(event) {
-    //   console.log(this.parentElement.parentElement);
-    //   var summary = this.parentElement.parentElement;
-    //   console.log(this.checked);
-    //   if(this.checked) {
-    //     summary.classList.add("strikethrough")
-    //   } else {
-    //     summar.classList.remove("strikethrough")
-    //   }
-    // });
+$(".drugCheckMark").on("click", function(event) {
+  console.log(this.parentElement.parentElement);
+  var row = this.parentElement.parentElement;
+  console.log(this.checked);
+  if(this.checked) {
+    row.classList.add("strikethrough")
+  } else {
+    row.classList.remove("strikethrough")
+  }
+});
+
+    
 
   $(function(){
     $("#infoIn").on("click", function(event){
@@ -50,31 +41,31 @@ $(document).ready(function(){
        var late = true;
        
    
-      //  var drug_db_input = {
+       var drug_db_input = {
    
-      //    ndcNum: 1,
-      //    rxNum: 1,
-      //    pharmName: 'dsfdfsdf',
-      //    doctorName: 'sdfsdfsd',
-      //    drugName: "dfgdfg",
-      //    drugForm: "dsfdsf",
-      //    drugFormSize: 1,
-      //    drugFormMeasure: "dfdfsdf",
-      //    currentQty: 1,
-      //    bottleFullQty: 1,
-      //    bottlePartialQty: 1,
-      //    rxWritten: '2018-09-19',
-      //    rxFilled: '2018-09-19',
-      //    rxDiscard: '2018-09-19',
-      //    rxReorder: '2018-09-19',
-      //    drugDose: 1,
-      //    drugFreq: 1,
-      //    early: true,
-      //    middle: true,
-      //    late: true,
-      //    instructions: "dsfdfg",
-      //    precautions: "dfgdg",
-      //  }
+         ndcNum: 1,
+         rxNum: 1,
+         pharmName: 'dsfdfsdf',
+         doctorName: 'sdfsdfsd',
+         drugName: "dfgdfg",
+         drugForm: "dsfdsf",
+         drugFormSize: 1,
+         drugFormMeasure: "dfdfsdf",
+         currentQty: 1,
+         bottleFullQty: 1,
+         bottlePartialQty: 1,
+         rxWritten: '2018-09-19',
+         rxFilled: '2018-09-19',
+         rxDiscard: '2018-09-19',
+         rxReorder: '2018-09-19',
+         drugDose: 1,
+         drugFreq: 1,
+         early: true,
+         middle: true,
+         late: true,
+         instructions: "dsfdfg",
+         precautions: "dfgdg",
+       }
 
        var drug_db_input = {
    
@@ -187,6 +178,27 @@ $(document).ready(function(){
 
     })
 
+//     // adding date to dateTitle div
+// // var time = new Date().format("YYYY-MM-DD");
+// var time = moment().format("dddd, MMMM Do YYYY");
+
+// console.log(time)
+// $ (".lead").append(time);
+
+// $(".drugCheckMark").on("click", function(event) {
+//   console.log(this.parentElement.parentElement);
+//   var row = this.parentElement.parentElement;
+//   console.log(this.checked);
+//   if(this.checked) {
+//     row.classList.add("strikethrough")
+//   } else {
+//     row.classList.remove("strikethrough")
+//   }
+// });
+
+    
+  
+
 
 
    
@@ -218,7 +230,7 @@ $(document).ready(function(){
   //   console.log("Ingredients: " + results.results[0].description);
   //   console.log("======================");
   //   console.log("Instructions: " + results.results[0].dosage_and_administration);
-  //   // better instructions than this?
+   
   
   // })
 
