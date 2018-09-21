@@ -9,7 +9,7 @@ var db = require("../models/drug.js");
 var path = require("path");
 
 
-router.get("/", function(req, res){
+router.get("/index", function(req, res){
   db.drugs.all(function(data){
     var hbsObject = {
       drugs: data.map(  function(drug) {
@@ -33,7 +33,16 @@ router.get("/input", function(req, res) {
 router.post("/input", function(req, res){
   console.log('posting...');
   db.drugs.create([
-    "ndcNum", "rxNum",  "pharmName", "doctorName","drugName", "drugForm", "drugFormSize", "drugFormMeasure", "bottleFullQty", "bottlePartialQty",
+    "ndcNum", 
+    "rxNum",  
+    "pharmName", 
+    "doctorName",
+    "drugName", 
+    "drugForm", 
+    "drugFormSize", 
+    "drugFormMeasure", 
+    "bottleFullQty", 
+    "bottlePartialQty",
     "rxWritten",
     "rxFilled",
     "rxDiscard",
@@ -98,9 +107,14 @@ router.post("/input", function(req, res){
 router.get("/drugInventory", function(req, res){
   db.drugs.getDrugQuantity(function(result) {
     console.log("result: " ,result);
+    res.render("index", {
+      drugs: result
+    })
+
   })
 });
-router.get("/input", function(req, res){
+
+router.get("/index", function(req, res){
 res.sendFile(path.resolve("public/input.html"));
 })
 
