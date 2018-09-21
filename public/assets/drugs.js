@@ -1,57 +1,49 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-  //adding date to dateTitle div
-    // var time = new Date().format("YYYY-MM-DD");
-    // var time = moment().format("dddd, MMMM Do YYYY");
 
-    // // console.log(time)
-    // $ (".lead").append(time);
+var time = moment().format("dddd, MMMM Do YYYY");
 
-    // $(".drugCheckMark").on("click", function(event) {
-    //   console.log(this.parentElement.parentElement);
-    //   var row = this.parentElement.parentElement;
-    //   console.log(this.checked);
-    //   if(this.checked) {
-    //     row.classList.add("strikethrough")
-    //   } else {
-    //     row.classList.remove("strikethrough")
-    //   }
-    // });
+console.log(time)
+$ (".lead").append(time);
 
-    // $(".drugCheckMark").on("click", function(event) {
-    //   console.log(this.parentElement.parentElement);
-    //   var summary = this.parentElement.parentElement;
-    //   console.log(this.checked);
-    //   if(this.checked) {
-    //     summary.classList.add("strikethrough")
-    //   } else {
-    //     summar.classList.remove("strikethrough")
-    //   }
-    // });
+$(".drugCheckMark").on("click", function(event) {
+  console.log(this.parentElement.parentElement);
+  var row = this.parentElement.parentElement;
+  console.log(this.checked);
+  if(this.checked) {
+    row.classList.add("strikethrough")
+  } else {
+    row.classList.remove("strikethrough")
+  }
+});
+
+    
 
   $(function(){
     $("#infoIn").on("click", function(event){
+
 
       var early = false;
       var middle = false;
       var late = false;
       var non = false;
-   
-       if($("#early").is(':checked'))
-       var early = true;
-   
-       if($("#mid").is(':checked'))
-       var middle = true;
-   
-       if($("#late").is(':checked'))
-       var late = true;
-   
-       if($("#non").is(':checked'))
-       var late = true;
-       
-   
+
+
+      if ($("#early").is(':checked'))
+        var early = true;
+
+      if ($("#mid").is(':checked'))
+        var middle = true;
+
+      if ($("#late").is(':checked'))
+        var late = true;
+
+      if ($("#non").is(':checked'))
+        var late = true;
+
+
       //  var drug_db_input = {
-   
+
       //    ndcNum: 1,
       //    rxNum: 1,
       //    pharmName: 'dsfdfsdf',
@@ -76,8 +68,8 @@ $(document).ready(function(){
       //    precautions: "dfgdg",
       //  }
 
-       var drug_db_input = {
-   
+      var drug_db_input = {
+
         ndcNum: $("#ndcNum").val(),
         rxNum: $("#rxNum").val(),
         pharmName: $("#pharmName").val(),
@@ -100,21 +92,50 @@ $(document).ready(function(){
         late: late,
         instructions: $("#instructions").val(),
         precautions: $("#precautions").val(),
-      
-  
+
+
       }
-   
-       console.log("drug in:", drug_db_input);
+
+      console.log("drug in:", drug_db_input);
 
 
-       $.ajax("/input", {
+      $.ajax("/input", {
         type: "POST",
         data: drug_db_input
       }).then(
-        function(result) {
+        function (result) {
           console.log("Success!: ", result);
         }
       );
+
+
+
+
+      var queryURL = "https://api.fda.gov/drug/label.json?search=openfda.brand_name:hydrocodone" + drugName;
+      
+
+      $.ajax({
+        url: queryURL,
+        type: "GET"
+      }).then(function (results) {
+
+        // console.log(results);
+        // console.log("======================");
+        // console.log("Id Number: " + results.results[0].openfda.package_ndc[0]);
+        // // proudct_ndc ???????
+        // console.log("======================");
+        // console.log("Drug Interactions: " + results.results[0].drug_interactions);
+        // console.log("======================");
+        console.log("Precautions: " + results.results[0].general_precautions);
+        // console.log("======================");
+        // console.log("Adverse Reactions: " + results.results[0].adverse_reactions);
+        // console.log("======================");
+        // console.log("Ingredients: " + results.results[0].description);
+        console.log("======================");
+        console.log("Instructions: " + results.results[0].dosage_and_administration);
+
+
+      })
     });
    
    
@@ -144,43 +165,52 @@ $(document).ready(function(){
        console.log("pharm ctc:", contact_db_pharm);
        console.log("dr ctc:", contact_db_prescr);
     
+
+    $("#ndcNum").val("");
+    $("#rxNum").val("");
+    $("#pharmName").val("");
+    $("#doctorName").val("");
+    $("#drugName").val("");
+    $('input:radio[name=drugForm]:checked').val("");
+    $("#drugFormSize").val("");
+    $("#drugFormMeasure").val("");
+    $("#bottleFullQty").val("");
+    $("#bottlePartialQty").val("");
+    $("#rxWritten").val("");
+    $("#rxRefills").val("");
+    $("#rxDiscard").val("");
+    $("#rxReorder").val("");
+    $("#drugDose").val("");
+    $("#drugFreq").val("");
+    $("#instructions").val("");
+    $("#precautions").val("");
+
+    $("#pharmName").val("");
+    $("#inputAddress").val("");
+    $("#inputCity").val("");
+    $("#inputState").val("");
+    $("#inputZip").val("");
+    $("#email").val("");
+    $("#phone").val("");
+
+    $("#doctorName").val("");
+    $("#inputAddress2").val("");
+    $("#inputCity2").val("");
+    $("#inputState2").val("");
+    $("#inputZip2").val("");
+    $("#email2").val("");
+    $("#phone2").val("");
+
+
+
+
      });
 
     })
 
 
 
-   
-
-// Jordan's area: ///////////////////////////////////
-
-  // var drugName = "Hydrocodone";
-
-  // function populatePrecautions(arrayToUse, classToAdd, areaToAddTo){
     
-  // }
 
-  // $.ajax({
-  //   url: "https://api.fda.gov/drug/label.json?search=openfda.brand_name:" + drugName,
-  //   type: "GET"
-  // }).then(function(results) {
-  
-  //   console.log(results);
-  //   console.log("======================");
-  //   console.log("Id Number: " + results.results[0].openfda.package_ndc[0]);
-  //   // proudct_ndc ???????
-  //   console.log("======================");
-  //   console.log("Drug Interactions: " + results.results[0].drug_interactions);
-  //   console.log("======================");
-  //   console.log("Precautions: " + results.results[0].general_precautions);
-  //   console.log("======================");
-  //   console.log("Adverse Reactions: " + results.results[0].adverse_reactions);
-  //   console.log("======================");
-  //   console.log("Ingredients: " + results.results[0].description);
-  //   console.log("======================");
-  //   console.log("Instructions: " + results.results[0].dosage_and_administration);
-  //   // better instructions than this?
-  
-  // })
 
 
