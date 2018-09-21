@@ -8,7 +8,6 @@ var db = require("../models/drug.js");
 
 var path = require("path");
 
-
 router.get("/index", function(req, res){
   db.drugs.all(function(data){
     var hbsObject = {
@@ -25,6 +24,10 @@ router.get("/index", function(req, res){
     res.render("index", hbsObject);
   });
 });
+
+router.get("/", function(req, res) {
+  res.render("input");
+})
 
 router.get("/input", function(req, res) {
   res.render("input");
