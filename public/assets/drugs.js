@@ -1,31 +1,33 @@
 $(document).ready(function () {
 
-  // adding date to dateTitle div
-    // var time = new Date().format("YYYY-MM-DD");
-    var time = moment().format("dddd, MMMM Do YYYY");
 
-    // console.log(time)
-    $ (".lead").append(time);
+var time = moment().format("dddd, MMMM Do YYYY");
 
-    $(".drugCheckMark").on("click", function(event) {
-      console.log(this.parentElement.parentElement);
-      var row = this.parentElement.parentElement;
-      console.log(this.checked);
-      if(this.checked) {
-        row.classList.add("strikethrough")
-      } else {
-        row.classList.remove("strikethrough")
-      }
-    });
+console.log(time)
+$ (".lead").append(time);
 
+$(".drugCheckMark").on("click", function(event) {
+  console.log(this.parentElement.parentElement);
+  var row = this.parentElement.parentElement;
+  console.log(this.checked);
+  if(this.checked) {
+    row.classList.add("strikethrough")
+  } else {
+    row.classList.remove("strikethrough")
+  }
+});
 
-  $(function () {
-    $("#infoIn").on("click", function (event) {
+    
+
+  $(function(){
+    $("#infoIn").on("click", function(event){
+
 
       var early = false;
       var middle = false;
       var late = false;
       var non = false;
+
 
       if ($("#early").is(':checked'))
         var early = true;
@@ -108,10 +110,9 @@ $(document).ready(function () {
 
 
 
+
       var queryURL = "https://api.fda.gov/drug/label.json?search=openfda.brand_name:hydrocodone" + drugName;
       
-  
-
 
       $.ajax({
         url: queryURL,
@@ -136,35 +137,80 @@ $(document).ready(function () {
 
       })
     });
+   
+   
+       var contact_db_pharm = {
+   
+         pharmName: $("#pharmName").val(),
+         type: "pharmacy",
+         inputAddress: $("#inputAddress").val(),
+         inputCity: $("#inputCity").val(),
+         inputState: $("#inputState").val(),
+         inputZip: $("#inputZip").val(),
+         email: $("#email").val(),
+         phone: $("#phone").val()
+       }
+   
+       var contact_db_prescr = {
+   
+         doctorName: $("#doctorName").val(),
+         type: "prescriber",
+         inputAddress: $("#inputAddress2").val(),
+         inputCity: $("#inputCity2").val(),
+         inputState: $("#inputState2").val(),
+         inputZip: $("#inputZip2").val(),
+         email: $("#email2").val(),
+         phone: $("#phone2").val()
+       }
+       console.log("pharm ctc:", contact_db_pharm);
+       console.log("dr ctc:", contact_db_prescr);
+    
+
+    $("#ndcNum").val("");
+    $("#rxNum").val("");
+    $("#pharmName").val("");
+    $("#doctorName").val("");
+    $("#drugName").val("");
+    $('input:radio[name=drugForm]:checked').val("");
+    $("#drugFormSize").val("");
+    $("#drugFormMeasure").val("");
+    $("#bottleFullQty").val("");
+    $("#bottlePartialQty").val("");
+    $("#rxWritten").val("");
+    $("#rxRefills").val("");
+    $("#rxDiscard").val("");
+    $("#rxReorder").val("");
+    $("#drugDose").val("");
+    $("#drugFreq").val("");
+    $("#instructions").val("");
+    $("#precautions").val("");
+
+    $("#pharmName").val("");
+    $("#inputAddress").val("");
+    $("#inputCity").val("");
+    $("#inputState").val("");
+    $("#inputZip").val("");
+    $("#email").val("");
+    $("#phone").val("");
+
+    $("#doctorName").val("");
+    $("#inputAddress2").val("");
+    $("#inputCity2").val("");
+    $("#inputState2").val("");
+    $("#inputZip2").val("");
+    $("#email2").val("");
+    $("#phone2").val("");
 
 
-    var contact_db_pharm = {
 
-      pharmName: $("#pharmName").val(),
-      type: "pharmacy",
-      inputAddress: $("#inputAddress").val(),
-      inputCity: $("#inputCity").val(),
-      inputState: $("#inputState").val(),
-      inputZip: $("#inputZip").val(),
-      email: $("#email").val(),
-      phone: $("#phone").val()
-    }
 
-    var contact_db_prescr = {
+     });
 
-      doctorName: $("#doctorName").val(),
-      type: "prescriber",
-      inputAddress: $("#inputAddress2").val(),
-      inputCity: $("#inputCity2").val(),
-      inputState: $("#inputState2").val(),
-      inputZip: $("#inputZip2").val(),
-      email: $("#email2").val(),
-      phone: $("#phone2").val()
-    }
-    console.log("pharm ctc:", contact_db_pharm);
-    console.log("dr ctc:", contact_db_prescr);
+    })
 
-  });
 
-})
+
+    
+
+
 
