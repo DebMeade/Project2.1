@@ -23,9 +23,9 @@ CREATE TABLE `drugs` (
 	`rxReorder` DATE NOT NULL,
 	`drugDose` INT(11) NOT NULL,
 	`drugFreq` INT(11) NOT NULL,
-	`early` TINYINT(1) ,
-	`middle` TINYINT(1),
-	`late` TINYINT(1) DEFAULT TRUE,
+	`early` TINYINT(1) NULL,
+	`middle` TINYINT(1) NULL,
+	`late` TINYINT(1) NULL,
 	`instructions` TEXT NOT NULL,
 	`precautions` TEXT NOT NULL,
 	PRIMARY KEY (`id`)
