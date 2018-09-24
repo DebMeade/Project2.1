@@ -11,7 +11,7 @@ CREATE TABLE `drugs` (
 	`doctorName` VARCHAR(40) NOT NULL,
 	`pharmName` VARCHAR(40) NOT NULL,
 	`drugName` VARCHAR(40) NOT NULL,
-	`drugForm` VARCHAR(40) NOT NULL,
+	`drugForm` VARCHAR(40) NULL,
 	`drugFormSize` INT(40) NULL DEFAULT NULL,
 	`drugFormMeasure` VARCHAR(40) NULL DEFAULT NULL,
 	`currentQty` INT(40) NOT NULL,
@@ -23,13 +23,13 @@ CREATE TABLE `drugs` (
 	`rxReorder` DATE NOT NULL,
 	`drugDose` INT(11) NOT NULL,
 	`drugFreq` INT(11) NOT NULL,
-	`early` TINYINT(1) NULL DEFAULT NULL,
-	`middle` TINYINT(1) NULL DEFAULT NULL,
-	`late` TINYINT(1) NULL DEFAULT NULL,
+	`early` TINYINT(1) NULL,
+	`middle` TINYINT(1) NULL,
+	`late` TINYINT(1) NULL,
 	`instructions` TEXT NOT NULL,
 	`precautions` TEXT NOT NULL,
 	PRIMARY KEY (`id`)
-)
+);
 
 USE drugTracker_db;
 DROP TABLE IF EXISTS contacts;
@@ -38,9 +38,6 @@ CREATE TABLE contacts
     id INT (40) AUTO_INCREMENT,  
     pharmName VARCHAR (40) NOT NULL,         
     doctorName VARCHAR (40) NOT NULL,
-    id INT (40) AUTO_INCREMENT, 
-    doctorName VARCHAR (40) NULL,          
-    pharmName VARCHAR (40) NULL,
     address VARCHAR (40) NOT NULL,
     city VARCHAR (40) NOT NULL, 
     state VARCHAR (40) NOT NULL, 
@@ -55,18 +52,16 @@ CREATE TABLE contacts
 
 
 USE drugTracker_db;
-DROP TABLE IF EXISTS inventory
+DROP TABLE IF EXISTS inventory;
 CREATE TABLE inventory
 (
     id INT (40) AUTO_INCREMENT,  
     drugName VARCHAR (40) NOT NULL,
     bottleFullQty INT,
     bottlePartialQty INT, 
-    drugDose INT,,
+    drugDose INT,
     drugFrew INT,
-    bottleCount INT
+    bottleCount INT,
     PRIMARY KEY
     (id)
 );
-
-

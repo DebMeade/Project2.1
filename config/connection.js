@@ -7,11 +7,11 @@ if(process.env.JAWSDB_URL) {
 } else {
 
 var connection = mysql.createConnection({
-  host: "muowdopceqgxjn2b.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-  port: 3306,
-  user: "k9qclj97v356cw8d",
-  password: "o9cv24hsblqkiye7",
-  database: "ib75mtfe3mk00w1j"
+  host: "localhost",
+  port: 8889,
+  user: "root",
+  password: "root",
+  database: "drugTracker_db"
 });
 
 }

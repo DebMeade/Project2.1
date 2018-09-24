@@ -1,16 +1,16 @@
-          <tr class="col-md-12 centerText">
+<tr class="col-md-12 centerText">
             <div class="row">
               <td class="col-md-2 taken" >
                 <input type="checkbox" class="drugCheckMark" {{bindAttr checked="isChecked" }}>
               </td>
-              <td class="col-md-2 columnWidth">{{this.drugName}}</td>
+              <td class="col-md-2 columnWidth drugName">{{this.drugName}}</td>
               <td class="col-md-2 columnDosage">{{this.drugDose}}</td>
               <td class="col-md-2 columnWidth">
                 {{!-- <details>
                   <summary> --}}
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-light btnOpacity btn-sm" data-toggle="modal" data-target="#exampleModalLong">
+<button type="button" class="btn btn-light btnOpacity btn-sm modalApi" data-toggle="modal" data-target="#exampleModalLong">
   View Instructions
 </button>
 
@@ -25,7 +25,10 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <div id = "drugInstructions">
+
+
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -42,7 +45,7 @@
               <td class="col-md-2 columnWidth">
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-light btnOpacity btn-sm" data-toggle="modal" data-target="#exampleModalLong">
+<button type="button" class="btn btn-light btnOpacity btn-sm modalApi" data-toggle="modal" data-target="#exampleModalLong">
   View Precautions
 </button>
 
@@ -57,7 +60,11 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <div id = "b">
+
+
+        </div>
+  
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
